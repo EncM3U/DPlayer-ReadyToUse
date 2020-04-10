@@ -43,11 +43,13 @@ function getVariable(variable)                                                 /
             
             if (getBrowserLang().substring(0,2) == 'zh'){
                 var defaultSubUrl = 'asset/demoSubtitle_cn.vtt';
+                return defaultSubUrl;
             }
             else{
                 var defaultSubUrl = 'asset/demoSubtitle_en.vtt';
+                return defaultSubUrl;
             }
-            return defaultSubUrl;
+            
         }
         else if (variable == "webtitle")                                                //页面title相关
         {
@@ -55,7 +57,7 @@ function getVariable(variable)                                                 /
             return defaultWebTitle;
         }
         else {
-            return (true);
+            return null;
         }
     }
 }
