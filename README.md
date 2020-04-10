@@ -25,6 +25,7 @@ You can custom your player instance by those variables.
 |    Name    |          Default           |                                                         Description                                                          |
 |:----------:|:--------------------------:|:----------------------------------------------------------------------------------------------------------------------------:|
 |  autoplay  |           false            |                                                video autoplay , values: 1 , 0                                                |
+|  danmaku   |      Wait for update       |                                                                                                                              |
 |    live    |           false            |                  enable live mode, values: 1 , 0. Also see [#live](https://dplayer.js.org/guide.html#live)                   |
 |   picurl   |   see [#defaultPicurl]()   |                                                         video poster                                                         |
 | playerlogo |      Wait for update       |                                             showing logo in the top left corner                                              |
