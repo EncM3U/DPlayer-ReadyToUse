@@ -18,7 +18,7 @@
 
 您可以通过这些变量自定义播放器实例。
 
-> 范例 : <https://example.com/DPlayer/?[Name1]=[value1]&[Name2]=[value2]> 
+> 链接示例 : <https://example.com/DPlayer/?[Name1]=[value1]&[Name2]=[value2]> 
 >
 > 演示 : <https://dplayer.mochanbw.cn/>
  
@@ -44,7 +44,8 @@
 ## 为什么创建这个仓库?
 
 > 第一次使用DPlayer时，我是个真正的菜鸡
-因此我想为像我这样的新手创建这个仓库，并轻松使用DPlayer————这个出色的HTML5播放器
+
+> 因此我想为像我这样的新手创建这个仓库，并轻松使用DPlayer————这个出色的HTML5播放器
 
 ## 作者的话
 
