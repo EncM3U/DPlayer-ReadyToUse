@@ -8,10 +8,6 @@
 
 ## Introduction
 
-<div style="position: relative; width: 98%; height: 100%; box-sizing: border-box; margin:auto;padding:0;">
-<iframe src="https://dplayer.mochanbw.cn" seamless scrolling="no"  frameborder="0"  allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; "></iframe>
-</div>
-
 *DPlayer-ReadyToUse* is a simple pack to help people use DPlayer more easily.
 
 * Using simple URL to access advanced settings for [DPlayer](https://github.com/MoePlayer/DPlayer).
