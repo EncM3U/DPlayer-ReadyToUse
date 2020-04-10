@@ -1,4 +1,4 @@
-<b>[English](https://github.com/MoChanBW/DPlayer-Ready-to-use/blob/master/README.md) | [中文]</b>
+<b>[English](https://github.com/MoChanBW/DPlayer-Ready-to-use/blob/master/README.md) | 中文</b>
 
 <h1 align="center">DPlayer-ReadyToUse</h1>
 
@@ -21,7 +21,7 @@
 > 链接示例 : <https://example.com/DPlayer/?[Name1]=[value1]&[Name2]=[value2]> 
 >
 > 演示 : <https://dplayer.mochanbw.cn/>
- 
+
 |    名称    |           默认值           |                                                            描述                                                              |
 |:----------:|:--------------------------:|:----------------------------------------------------------------------------------------------------------------------------:|
 |  autoplay  |           false            |                                                   视频自动播放 , 值: 1 , 0                                                   |

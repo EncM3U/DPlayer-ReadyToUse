@@ -16,7 +16,7 @@ const dp = new DPlayer({												//DPlayer主控制函数,详见 http://dplay
         url: getVariable("vidurl"),                                     //视频链接
         pic: getVariable("picurl"),
         thumbnails: getVariable("thumburl"),
-        type: getVariable("vidtype"),                                   //视频类型(flv.mp4.hls.dash)(magnet在链接中用不了)
+        type: getVariable("vidtype"),                                   //视频类型(flv.normal.hls.dash)
     },
     subtitle: {
         url: getVariable("suburl"),                                     //字幕链接，vtt格式

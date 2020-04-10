@@ -42,11 +42,11 @@ function getVariable(variable)                                                 /
         {
 
             if (getBrowserLang().substring(0, 2) == 'zh') {
-                var defaultSubUrl = 'asset/demoSubtitle_cn.vtt';
+                var defaultSubUrl = 'assets/demoSubtitle_cn.vtt';
                 return defaultSubUrl;
             }
             else {
-                var defaultSubUrl = 'asset/demoSubtitle_en.vtt';
+                var defaultSubUrl = 'assets/demoSubtitle_en.vtt';
                 return defaultSubUrl;
             }
 
@@ -125,7 +125,7 @@ function getContextMenu()                                                       
         };
         contextMenu[3] = {
             text: "Instructions",
-            link: "https://github.com/MoChanBW/CDN/tree/master/DPlayer",
+            link: "https://github.com/MoChanBW/DPlayer-ReadyToUse",
         };
         return contextMenu;
     }
@@ -194,7 +194,7 @@ dp.on("fullscreen_cancel", function () {
     fullScreenNow = 0;
 });
 
-dp.on("canplay", checkMobileLandscape());
+dp.on("loadstart", checkMobileLandscape());
 
 function checkMobileLandscape() {
     if (fullScreenNow == 1 && /Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
