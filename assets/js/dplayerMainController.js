@@ -21,7 +21,7 @@ const dp = new DPlayer({												//DPlayer主控制函数,详见 http://dplay
     subtitle: {
         url: getVariable("suburl"),                                     //字幕链接，vtt格式
         type: 'webvtt',
-        fontSize: '25px',
+        fontSize: '20px',
         bottom: '10%',
         color: '#b7daff',
     },

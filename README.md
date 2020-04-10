@@ -18,12 +18,20 @@
 
 You can custom your player instance by those variables.
 
-> Example Link: https://example
+> Example Link: https://example.com/DPlayer/?[Name1]=[key1]&[Name2]=[key2] etc.
+>
+> DEMO : https://dplayer.mochanbw.cn/
 
-|  Name   | Default |                         Description                          |
-| :-----: | :-----: | :----------------------------------------------------------: |
-|  live   |  false  | enable live mode, see [#live](https://dplayer.js.org/guide.html#live) |
-| vidtype | 'auto'  |                                                              |
-| vidurl  |         |                                                              |
-| picurl  |         |                                                              |
+|    Name    |          Default           |                         Description                          |
+| :--------: | :------------------------: | :----------------------------------------------------------: |
+|    live    |           false            | enable live mode, see [#live](https://dplayer.js.org/guide.html#live) |
+|  autoplay  |           false            |                                                              |
+|  vidtype   |           'auto'           |                                                              |
+|   vidurl   |   see [#defaultVicurl]()   |                                                              |
+|   picurl   |   see [#defaultPicurl]()   |                                                              |
+|  thumburl  |            true            |                                                              |
+|   suburl   | 'asset/demoSubtitle_*.vtt' |                                                              |
+| playerlogo |      Wait for update       |                                                              |
+|  webtitle  |         'DPlayer'          |                                                              |
+|  weblogo   |      Wait for update       |                                                              |
 
