@@ -44,4 +44,5 @@ You can custom your player instance by those variables.
 ## Why create this repo?
 
 > I AM A REAL NOOB WHEN I FIRST USE DPLAYER.
+
 Create this for newbies like me. Let others easy to use DPlayer —— this great HTML5 Player.
