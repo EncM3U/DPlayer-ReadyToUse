@@ -1,4 +1,4 @@
-<h1 align="center">DPlayer-prepacked</h1>
+<h1 align="center">DPlayer-Ready to Use</h1>
 
 > Easy to use DPlayer with single URL .
 
