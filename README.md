@@ -2,7 +2,7 @@
 
 <h1 align="center">DPlayer-ReadyToUse</h1>
 
-> Use DPlayer easily with a single link.
+> Use DPlayer easily with a simple link.
 
  [![MIT license](https://img.shields.io/github/license/MoChanBW/DPlayer-ReadyToUse)](https://github.com/MoChanBW/DPlayer-ReadyToUse/blob/master/LICENSE)
 
