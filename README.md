@@ -1,4 +1,4 @@
-<b>English | [中文](https://github.com/MoChanBW/DPlayer-Ready-to-use/blob/master/Readme_zh.md)</b>
+<b>English | [中文](https://github.com/MoChanBW/DPlayer-Ready-to-use/blob/master/README_zh.md)</b>
 
 <h1 align="center">DPlayer-ReadyToUse</h1>
 
