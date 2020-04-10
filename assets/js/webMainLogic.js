@@ -179,3 +179,25 @@ function getBrowserLang() {                                                     
         return 'en'
     }
 }
+
+//修复手机横屏问题  from https://dandoc.u2sb.top/danmu/install.html#dplayer-%E7%9A%84%E7%AE%80%E5%8D%95%E5%BA%94%E7%94%A8
+dp.on("fullscreen", function () {
+    fullScreenNow = 1;
+    if (
+        /Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
+    ) {
+        screen.orientation.lock("landscape");
+    }
+});
+
+dp.on("fullscreen_cancel",function (){
+    fullScreenNow = 0;
+});
+
+dp.on("canplay",checkMobileLandscape());
+
+function checkMobileLandscape(){
+    if (fullScreenNow == 1 && /Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        screen.orientation.lock("landscape");
+    }
+}
