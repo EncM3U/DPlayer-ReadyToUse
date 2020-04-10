@@ -4,13 +4,17 @@
 
 > Use DPlayer easily with a single link.
 
- [![MIT license](https://img.shields.io/github/license/MoChanBW/DPlayer-prepacked)](https://github.com/MoChanBW/DPlayer-prepacked/blob/master/LICENSE)
+ [![MIT license](https://img.shields.io/github/license/MoChanBW/DPlayer-ReadyToUse)](https://github.com/MoChanBW/DPlayer-ReadyToUse/blob/master/LICENSE)
 
 ## Introduction
 
-* Pack [DPlayer](https://github.com/MoePlayer/DPlayer) into single HTML file.
+<div style="position: relative; width: 100%; height: 0; padding-bottom: 75%;">
+    <iframe src="https://dplayer.mochanbw.cn" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true" style="position: absolute; width: 100%; height: 100%; left: 0; top: 0;"></iframe>
+</div>
 
-* Using single URL to access DPlayer.
+DPlayer-ReadyToUse is a simple html pack to help people use DPlayer more easily.
+
+* Using single URL to access advanced settings for [DPlayer](https://github.com/MoePlayer/DPlayer).
 
 * Using DPlayer in Markdown easily.
 
@@ -18,8 +22,6 @@
 
 You can custom your player instance by those variables.
 
-> Example Link: <https://example.com/DPlayer/?[Name1]=[value1]&[Name2]=[value2]> etc.
->
 > DEMO : <https://dplayer.mochanbw.cn/>
 
 |    Name    |          Default           |                                                         Description                                                          |
@@ -39,10 +41,11 @@ You can custom your player instance by those variables.
 
 ## Usage
 
-> Wait to add
+`?[Name1]=[value1]&[Name2]=[value2]>` etc.
 
 ## Why create this repo?
 
-> I WAS A REAL NOOB WHEN I FIRST USED DPLAYER.
+> I WAS A REAL NOOB WHEN I FIRST USED DPLAYER. 
+> Official page can't generate a full-packed , easy-to-use player for me.
 
-Create this for new DPlayer users like me. Let others easier to use DPlayer —— a great HTML5 Player.
+Create this for new DPlayer users like me. Let others become easier to use DPlayer , just by a simple link.
