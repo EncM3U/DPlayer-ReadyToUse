@@ -1,6 +1,6 @@
-<b>[English](https://github.com/MoChanBW/DPlayer-Ready-to-use/blob/master/Readme.md) | [中文]</b>
+<b>[English](https://github.com/MoChanBW/DPlayer-Ready-to-use/blob/master/README.md) | [中文]</b>
 
-<h1 align="center">DPlayer-准备投入使用</h1>
+<h1 align="center">DPlayer-ReadToUse</h1>
 
 > 您能够轻松使用DPlayer播放单个链接
 
@@ -8,7 +8,7 @@
 
 ## 介绍
 
-* 将 [DPlayer](https://github.com/MoePlayer/DPlayer) 打包成一个单独的HTML文件
+* 将 [DPlayer](https://github.com/MoePlayer/DPlayer) 打包成单独的HTML文件
 
 * 用单个链接访问DPlayer
 
@@ -18,7 +18,7 @@
 
 您可以通过这些变量自定义播放器实例。
 
-> 范例: <https://example.com/DPlayer/?[Name1]=[value1]&[Name2]=[value2]> etc.
+> 范例 : <https://example.com/DPlayer/?[Name1]=[value1]&[Name2]=[value2]> 
 >
 > 演示 : <https://dplayer.mochanbw.cn/>
  
@@ -48,5 +48,8 @@
 
 ## 作者的话
 
-> 本人不才 翻译之处如有错误 还望大佬们指正
+> 本人不才,翻译之处如有错误,还望大佬们指正
+
 > 译者:[Klpy-Shuai](https://github.com/Klpy-Shuai)
+
+> 另：不知道为什么另一个作者要先搞个英文版的README而把翻译工作丢给我做
