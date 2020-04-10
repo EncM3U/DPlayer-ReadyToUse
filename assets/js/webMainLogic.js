@@ -40,16 +40,16 @@ function getVariable(variable)                                                 /
         }
         else if (variable == "suburl" && getQueryVariable("vidurl") == false)        //字幕相关,可用cdn加速
         {
-            
-            if (getBrowserLang().substring(0,2) == 'zh'){
+
+            if (getBrowserLang().substring(0, 2) == 'zh') {
                 var defaultSubUrl = 'asset/demoSubtitle_cn.vtt';
                 return defaultSubUrl;
             }
-            else{
+            else {
                 var defaultSubUrl = 'asset/demoSubtitle_en.vtt';
                 return defaultSubUrl;
             }
-            
+
         }
         else if (variable == "webtitle")                                                //页面title相关
         {
@@ -190,13 +190,13 @@ dp.on("fullscreen", function () {
     }
 });
 
-dp.on("fullscreen_cancel",function (){
+dp.on("fullscreen_cancel", function () {
     fullScreenNow = 0;
 });
 
-dp.on("canplay",checkMobileLandscape());
+dp.on("canplay", checkMobileLandscape());
 
-function checkMobileLandscape(){
+function checkMobileLandscape() {
     if (fullScreenNow == 1 && /Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
         screen.orientation.lock("landscape");
     }
