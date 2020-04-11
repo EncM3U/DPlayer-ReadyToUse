@@ -44,7 +44,7 @@ You can custom your player instance by those variables.
 ## Why create this repo
 
 > I WAS A REAL NOOB WHEN I FIRST USED DPLAYER.
-> 
+>
 > Official page can't generate a full-packed , easy-to-use player for me.
 
 Create this for new DPlayer users like me. Let others become easier to use DPlayer , just by a simple link.
