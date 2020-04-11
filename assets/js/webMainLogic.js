@@ -40,7 +40,7 @@ function getVariable(variable)                                                 /
         }
         else if (variable == "live")                                                //播放器左上角logo相关
         {
-            var defaultPlayerLogo = "/assets/Cloud_67%.webp";
+            var defaultPlayerLogo = "https://i.loli.net/2020/03/26/NeFKlai9bECDOIA.png";
             return defaultPlayerLogo;
         }
         else if (variable == "suburl" && getQueryVariable("vidurl") == false)        //字幕相关,可用cdn加速
