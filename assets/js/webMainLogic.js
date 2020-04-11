@@ -38,7 +38,7 @@ function getVariable(variable)                                                 /
         {
             return (false);
         }
-        else if (variable == "live")                                                //播放器左上角logo相关
+        else if (variable == "playerlogo")                                                //播放器左上角logo相关
         {
             var defaultPlayerLogo = "https://i.loli.net/2020/03/26/NeFKlai9bECDOIA.png";
             return defaultPlayerLogo;

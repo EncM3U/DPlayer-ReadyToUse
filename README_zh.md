@@ -22,20 +22,20 @@
 >
 > 演示 : <https://dplayer.mochanbw.cn/>
 
-|    名称    |           默认值           |                                                            描述                                                              |
-|:----------:|:--------------------------:|:----------------------------------------------------------------------------------------------------------------------------:|
-|  autoplay  |           false            |                                                   视频自动播放 , 值: 1 , 0                                                   |
-|  danmaku   |          等待更新          |                                                            弹幕                                                              |
-|    live    |           false            |                      启用直播模式, 值: 1 , 0. 另请参阅 [#直播](https://dplayer.js.org/guide.html#live)                       |
-|   picurl   |  请参阅 [#默认图片链接]()  |                                                          视频封面                                                            |
-| playerlogo |          等待更新          |                                                      在左上角显示图标                                                        |
-|   suburl   | 'asset/demoSubtitle_*.vtt' |                                                                                                                              |
-|  thumburl  |            true            |                      由[DPlayer缩略图](https://github.com/MoePlayer/DPlayer-thumbnails)生成的视频缩略图                      |
-|  vidqlty   |          等待更新          |                                                                                                                              |
-|  vidtype   |           'auto'           |          值: auto , hls , flv , dash , normal , <b>webtorrent</b>*(需要base64编码，且不能在'auto'中使用)*(等待更新)          |
-|   vidurl   |  请参阅 [#defaultVidurl]   |                                                           视频链接                                                           |
-|  webicon   |          等待更新          |                                                  配置网页图标 , 值 :  字符串                                                 |
-|  webtitle  |         'DPlayer'          |                                                  配置网页标题 , 值 :  字符串                                                 |
+|    名称    |           默认值           |                                                    描述                                                    |
+| :--------: | :------------------------: | :--------------------------------------------------------------------------------------------------------: |
+|  autoplay  |           false            |                                          视频自动播放 , 值: 1 , 0                                          |
+|  danmaku   |          等待更新          |                                                    弹幕                                                    |
+|    live    |           false            |             启用直播模式, 值: 1 , 0. 另请参阅 [#直播](https://dplayer.js.org/guide.html#live)              |
+|   picurl   |  请参阅 [#默认图片链接]()  |                                                  视频封面                                                  |
+| playerlogo |          等待更新          |                                              在左上角显示图标                                              |
+|   suburl   | 'asset/demoSubtitle_*.vtt' |                                                                                                            |
+|  thumburl  |            null            |             由[DPlayer缩略图](https://github.com/MoePlayer/DPlayer-thumbnails)生成的视频缩略图             |
+|  vidqlty   |          等待更新          |                                                                                                            |
+|  vidtype   |           'auto'           | 值: auto , hls , flv , dash , normal , <b>webtorrent</b>*(需要base64编码，且不能在'auto'中使用)*(等待更新) |
+|   vidurl   |  请参阅 [#defaultVidurl]   |                                                  视频链接                                                  |
+|  webicon   |          等待更新          |                                        配置网页图标 , 值 :  字符串                                         |
+|  webtitle  |         'DPlayer'          |                                        配置网页标题 , 值 :  字符串                                         |
 
 ## 用法
 
