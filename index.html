@@ -1,33 +1,56 @@
 <!DOCTYPE html>
-<html lang="zh-cn">
+<html>
 
 <head>
-	<title>DPlayer</title>
-	<meta charset="UTF-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="description" content="DPlayer —— a lovely HTML5 danmaku video player">
-	<meta name="description" content="DPlayer | 即开即用 | 开源 | 萌新">
-	<meta name="keywords" content="DPlayer,MoChanBW,Ready to use,Packed">
-	<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no">
-	<link rel="icon" href="https://i.loli.net/2020/03/18/ZHwGaTMvBEhzF2R.png">
-	<link rel="stylesheet" href="assets/css/DPlayer.min.css">
-	<script defer src="assets/js/jquery.min.js"></script>
-	<script defer src="assets/js/flv.min.js"></script>
-	<script defer src="assets/js/hls.min.js"></script>
-	<script defer src="assets/js/dash.all.min.js"></script>
-	<script defer src="assets/js/webtorrent.min.js"></script>
-	<script defer src="assets/js/DPlayer.min.js"></script>
+    <title>DPlayer</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="DPlayer —— a lovely HTML5 danmaku video player">
+    <meta name="description" content="DPlayer | 即开即用 | 开源 | 萌新">
+    <meta name="keywords" content="DPlayer,MoChanBW,Ready to use,Packed">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,shrink-to-fit=no">
+    <link rel="icon" href="https://i.loli.net/2020/03/18/ZHwGaTMvBEhzF2R.png">
+    <link rel="stylesheet" href="assets/css/DPlayer.min.css">
+    <script defer src="assets/js/jquery.min.js"></script>
+    <script defer src="assets/js/flv.min.js"></script>
+    <script defer src="assets/js/hls.min.js"></script>
+    <script defer src="assets/js/dash.all.min.js"></script>
+    <script defer src="assets/js/webtorrent.min.js"></script>
+    <script defer src="assets/js/DPlayer.min.js"></script>
+    <style type="text/css">
+        body,
+        html {
+            width: 100%;
+            height: 100%;
+            background: #4882ff;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+            overflow-y: hidden
+        }
+
+        * {
+            margin: 0;
+            border: 0;
+            padding: 0;
+            text-decoration: none
+        }
+
+        #dplayer {
+            position: inherit
+        }
+    </style>
 </head>
 <!--Author: https://github.com/MoChanBW -->
 <!--Need Help? https://github.com/MoChanBW/DPlayer-ReadyToUse -->
 <!--Bilibili 直播源示例 https://cn-hbxy-cmcc-live-01.live-play.acgvideo.com/live-bvc/live_102999485_4379933.m3u8 -->
 
 <body>
-	<div class='container' style="position: relative; width: 90%; height: 95%; box-sizing: border-box; margin:auto ;">
-		<div id="dplayer"></div>
-	</div>
-	<script defer src=assets/js/webMainLogic.js></script>
-	<script defer src=assets/js/dplayerMainController.js></script>
+    <div id="dplayer">
+        <p>DPlayer</p>
+    </div>
+    <script defer src=assets/js/webMainLogic.js></script>
+    <script defer src=assets/js/dplayerMainController.js></script>
 </body>
 
 </html>
