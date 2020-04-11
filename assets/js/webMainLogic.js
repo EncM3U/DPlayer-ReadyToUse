@@ -38,6 +38,11 @@ function getVariable(variable)                                                 /
         {
             return (false);
         }
+        else if (variable == "live")                                                //播放器左上角logo相关
+        {
+            var defaultPlayerLogo = "/assets/Cloud_67%.webp";
+            return defaultPlayerLogo;
+        }
         else if (variable == "suburl" && getQueryVariable("vidurl") == false)        //字幕相关,可用cdn加速
         {
 
@@ -180,31 +185,9 @@ function getBrowserLang() {                                                     
     }
 }
 
-//修复手机横屏问题  from https://dandoc.u2sb.top/danmu/install.html#dplayer-%E7%9A%84%E7%AE%80%E5%8D%95%E5%BA%94%E7%94%A8
-dp.on("fullscreen", function () {
-    fullScreenNow = 1;
-    if (
-        /Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
-    ) {
-        screen.orientation.lock("landscape");
-    }
-});
-/*
-dp.on("fullscreen_cancel", function () {
-    fullScreenNow = 0;
-});
 
-dp.on("loadstart", checkMobileLandscape());
-
-function checkMobileLandscape() {
-    if (fullScreenNow == 1 && /Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        screen.orientation.lock("landscape");
-    }
-}
-*/
-
-function base64Decoder(encodedString) {
-    let Base64 = {                                                  //from https://www.jianshu.com/p/82afa633033e
+function base64Decoder(encodedString) {                                                              //可以用 https://tool.oschina.net/encrypt?type=3  加密
+    let Base64 = {                                                                      //from https://www.jianshu.com/p/82afa633033e
         encode(str) {
             // first we use encodeURIComponent to get percent-encoded UTF-8,
             // then we convert the percent encodings into raw bytes which
@@ -222,8 +205,7 @@ function base64Decoder(encodedString) {
         }
     };
 
-    let encoded = Base64.encode(encodedString); // "5ZOIaGE="
-    let decoded = Base64.decode(encoded); // "哈ha"
+    //let encoded = Base64.encode(nonEncodedString); // "5ZOIaGE="
+    let decoded = Base64.decode(encodedString); // "哈ha"
     return decoded;
 }
-
