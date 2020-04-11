@@ -5,12 +5,12 @@
 > Use DPlayer easily with a simple link.
 
  [![MIT license](https://img.shields.io/github/license/MoChanBW/DPlayer-ReadyToUse)](https://github.com/MoChanBW/DPlayer-ReadyToUse/blob/master/LICENSE)
-
+[![jsDelivr](https://data.jsdelivr.com/v1/package/gh/MoChanBW/DPlayer-ReadyToUse/badge?style=rounded)](https://www.jsdelivr.com/package/gh/MoChanBW/DPlayer-ReadyToUse)
 ## Introduction
 
 *DPlayer-ReadyToUse* is a simple pack to help people use DPlayer more easily.
 
-* Using simple URL to access advanced settings for [DPlayer](https://github.com/MoePlayer/DPlayer).
+* Using simple URL to access advanced settings for [DPlayer](https://github.com/MoePlayer/DPlayer).  
 
 * Using DPlayer in Markdown easily.
 
@@ -21,7 +21,7 @@ You can custom your player instance by those variables.
 > DEMO : <https://dplayer.mochanbw.cn/>
 
 |    Name    |           Default           |                                                         Description                                                          |
-|:----------:|:---------------------------:|:----------------------------------------------------------------------------------------------------------------------------:|
+| :--------: | :-------------------------: | :--------------------------------------------------------------------------------------------------------------------------: |
 |  autoplay  |            false            |                                                video autoplay , values: 1 , 0                                                |
 |  danmaku   |       Wait for update       |                                                                                                                              |
 |    live    |            false            |                  enable live mode, values: 1 , 0. Also see [#live](https://dplayer.js.org/guide.html#live)                   |
