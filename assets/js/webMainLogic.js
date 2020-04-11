@@ -189,7 +189,7 @@ dp.on("fullscreen", function () {
         screen.orientation.lock("landscape");
     }
 });
-
+/*
 dp.on("fullscreen_cancel", function () {
     fullScreenNow = 0;
 });
@@ -201,6 +201,7 @@ function checkMobileLandscape() {
         screen.orientation.lock("landscape");
     }
 }
+*/
 
 function base64Decoder(encodedString) {
     let Base64 = {                                                  //from https://www.jianshu.com/p/82afa633033e
