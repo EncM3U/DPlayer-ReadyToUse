@@ -4,8 +4,7 @@
 
 > Use DPlayer easily with a simple link.
 
- [![MIT license](https://img.shields.io/github/license/MoChanBW/DPlayer-ReadyToUse)](https://github.com/MoChanBW/DPlayer-ReadyToUse/blob/master/LICENSE)
-[![jsDelivr](https://data.jsdelivr.com/v1/package/gh/MoChanBW/DPlayer-ReadyToUse/badge?style=rounded)](https://www.jsdelivr.com/package/gh/MoChanBW/DPlayer-ReadyToUse)
+ [![MIT license](https://img.shields.io/github/license/MoChanBW/DPlayer-ReadyToUse)](https://github.com/MoChanBW/DPlayer-ReadyToUse/blob/master/LICENSE) [![jsDelivr](https://data.jsdelivr.com/v1/package/gh/MoChanBW/DPlayer-ReadyToUse/badge?style=rounded)](https://www.jsdelivr.com/package/gh/MoChanBW/DPlayer-ReadyToUse)
 ## Introduction
 
 *DPlayer-ReadyToUse* is a simple pack to help people use DPlayer more easily.
