@@ -40,7 +40,7 @@ function getVariable(variable)                                                 /
                 return getQueryVariable("vidurl");
             }
             else //vidurl和magurl的值未指定时返回的链接（默认播放）
-            {   
+            {
                 var defaultVidUrl = 'https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm';
                 return defaultVidUrl;
             }
@@ -151,7 +151,7 @@ function getContextMenu()                                                       
         };
         contextMenu[3] = {
             text: "Instructions",
-            link: "https://github.com/MoChanBW/DPlayer-ReadyToUse",
+            link: "https://github.com/MoChanBW/DPlayer-ReadyToUse/",
         };
         return contextMenu;
     }
@@ -227,6 +227,18 @@ function base64Decoder(encodedString) {                                         
     };
 
     //let encoded = Base64.encode(nonEncodedString); 
-    let decoded = Base64.decode(encodedString); 
+    let decoded = Base64.decode(encodedString);
     return decoded;
 }
+
+var textHolder_en = {
+    "Instructions": "Instructions",
+};
+
+var textHolder_zh_tw = {
+
+};
+
+var textHolder_zh_cn = {
+
+};
