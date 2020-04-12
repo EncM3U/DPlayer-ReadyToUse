@@ -33,7 +33,7 @@ You can custom your player instance by those variables.
 
 Your inputs behind the URL will be automatically  surrounded by `''` in DPlayer.
 
-> DEMO : <https://dplayer.mochanbw.cn/demo/> (stable)
+> DEMO : <https://dplayer.mochanbw.cn/demo/> (stable) ![Now on Cloudflare Workers](https://img.shields.io/badge/Now%20on-Cloudflare%20Workers-f38020?logo=cloudflare&logoColor=f38020& style=flat-square)
 >
 > Beta : <https://dplayer.mochanbw.cn/> (slow)
 
