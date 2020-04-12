@@ -1,5 +1,5 @@
 <b>English | [中文](https://github.com/MoChanBW/DPlayer-ReadyToUse/blob/master/README_zh.md)</b>
-
+<img src="https://cdn.jsdelivr.net/gh/MoChanBW/DPlayer-ReadyToUse/assets/anime_character_psyduck.png" alt="dplayer-RTU-icon" align="center">
 <h1 align="center">DPlayer-ReadyToUse</h1>
 
 > Use DPlayer easily with a simple link.
