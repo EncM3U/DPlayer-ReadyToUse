@@ -22,7 +22,7 @@
 
 :balloon:**DPlayer-ReadyToUse** is a simple pack to help people use DPlayer more easily.
 
-* :rocket:Using simple URL to access advanced settings for [![DPlayer](https://img.shields.io/badge/Github-MoePlayer%2FDPlayer-f8b500?logo=Github&style=flat-square)](https://github.com/MoePlayer/DPlayer/).  
+* :rocket:Using simple URL to access advanced settings for [![DPlayer](https://img.shields.io/badge/Github-MoePlayer%2FDPlayer-f8b500?logo=Github&style=flat-square)](https://github.com/MoePlayer/DPlayer/) .  
 
 * :beginner: Using DPlayer in Markdown easily.
   
