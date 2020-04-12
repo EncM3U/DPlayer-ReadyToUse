@@ -64,7 +64,9 @@ Play magnet video based on [webtorrent](https://github.com/webtorrent/webtorrent
 
 e.g.`https://example.com/?magurl={base64EncodedMagnetLinkHere}`
 
-> Use base64 encoded Magnet link (Charset UTF-8) instead of using plain `magnet:?xt=urn:btih:{hash}` , and **you should delete all "`=`" at the end of the base64 encoded link before you put it into URL**.
+> Use base64 encoded Magnet link (Charset UTF-8) instead of using plain `magnet:?xt=urn:btih:{hash}`
+>
+> :warning: **you should delete all "`=`" at the end of the base64 encoded link before you put it into URL**.
 
 DEMO Webtorrent Video: [Sintel](https://dplayer.mochanbw.cn/demo/?magurl=bWFnbmV0Oj94dD11cm46YnRpaDowOGFkYTVhN2E2MTgzYWFlMWUwOWQ4MzFkZjY3NDhkNTY2MDk1YTEwJmRuPVNpbnRlbCZ0cj11ZHAlM2ElMmYlMmZ0cmFja2VyLm9wZW50cmFja3Iub3JnJTNhMTMzNyZ0cj11ZHAlM2ElMmYlMmZleHBsb2RpZS5vcmclM2E2OTY5JnRyPXVkcCUzYSUyZiUyZnRyYWNrZXIuZW1waXJlLWpzLnVzJTNhMTMzNyZ0cj13c3MlM2ElMmYlMmZ0cmFja2VyLmJ0b3JyZW50Lnh5eiZ0cj13c3MlM2ElMmYlMmZ0cmFja2VyLm9wZW53ZWJ0b3JyZW50LmNvbSZ0cj13c3MlM2ElMmYlMmZ0cmFja2VyLmZhc3RjYXN0Lm56JndzPWh0dHBzJTNhJTJmJTJmd2VidG9ycmVudC5pbyUyZnRvcnJlbnRzJTJm)
 
