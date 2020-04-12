@@ -20,7 +20,7 @@ function getVariable(variable)                                                 /
         if (variable == "vidtype") {
             if (getQueryVariable("magurl"))                                         //存在magurl时返回“webtorrent”
             {
-                var vidtype = "webtorrent";
+                var vidtype = "webtorrent";//when test we use auto,when we use it,it should be "webtorrent"
                 return vidtype;
             }
             else                                                                   //vidtype未指定时返回“自动”
@@ -35,20 +35,18 @@ function getVariable(variable)                                                 /
                 var decodedmagurl = base64Decoder(getQueryVariable("magurl"));
                 return decodedmagurl;
             }
-            else //如果不存在变量magurl
+            else if (getQueryVariable("vidurl"))                                 //vidurl的值存在时返回的链接
             {
-                if (getQueryVariable("vidurl"))//vidurl的值存在时返回的链接
-                {
-                    return getQueryVariable("vidurl");
-                }
-                else //vidurl的值未指定时返回的链接（默认播放）
-                {
-                    var defaultVidUrl = 'https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm';
-                    return defaultVidUrl;
-                }
+                return getQueryVariable("vidurl");
             }
+            else //vidurl和magurl的值未指定时返回的链接（默认播放）
+            {   
+                var defaultVidUrl = 'https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm';
+                return defaultVidUrl;
+            }
+
         }
-        else if (variable == "picurl" && getQueryVariable("vidurl") == false)    //picurl的值未指定时返回的链接（默认展示图）
+        else if (variable == "picurl" && getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false)    //picurl的值未指定时返回的链接（默认展示图）
         {
             var defaultPicUrl = 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/design/design-intro-e-plus.jpg';
             return defaultPicUrl;
@@ -66,7 +64,7 @@ function getVariable(variable)                                                 /
             var defaultPlayerLogo = "https://i.loli.net/2020/03/26/NeFKlai9bECDOIA.png";
             return defaultPlayerLogo;
         }
-        else if (variable == "suburl" && getQueryVariable("vidurl") == false)        //字幕相关,可用cdn加速
+        else if (variable == "suburl" && getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false)        //字幕相关,可用cdn加速
         {
 
             if (getBrowserLang().substring(0, 2) == 'zh') {
@@ -93,7 +91,7 @@ function getVariable(variable)                                                 /
 function getContextMenu()                                                           //返回右键的自定义功能目录（数组）
 {
     var contextMenu = [];
-    if (getQueryVariable("vidurl") == false)                                     //如果url中的vidurl参数为空，则返回默认menu
+    if (getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false)                                     //如果url中的vidurl参数为空，则返回默认menu
     {
         contextMenu[0] = {
             text: "HUAWEI Vision X65",
@@ -228,7 +226,7 @@ function base64Decoder(encodedString) {                                         
         }
     };
 
-    //let encoded = Base64.encode(nonEncodedString); // "5ZOIaGE="
-    let decoded = Base64.decode(encodedString); // "哈ha"
+    //let encoded = Base64.encode(nonEncodedString); 
+    let decoded = Base64.decode(encodedString); 
     return decoded;
 }
