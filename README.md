@@ -7,7 +7,7 @@
  [![MIT license](https://img.shields.io/github/license/MoChanBW/DPlayer-ReadyToUse)](https://github.com/MoChanBW/DPlayer-ReadyToUse/blob/master/LICENSE) [![jsDelivr](https://data.jsdelivr.com/v1/package/gh/MoChanBW/DPlayer-ReadyToUse/badge?style=rounded)](https://www.jsdelivr.com/package/gh/MoChanBW/DPlayer-ReadyToUse/)
 ## Introduction
 
-*DPlayer-ReadyToUse* is a simple pack to help people use DPlayer more easily.
+**DPlayer-ReadyToUse** is a simple pack to help people use DPlayer more easily.
 
 * Using simple URL to access advanced settings for [DPlayer](https://github.com/MoePlayer/DPlayer/).  
 
@@ -19,7 +19,9 @@ You can custom your player instance by those variables.
 
 Your inputs behind the URL will be automatically  surrounded by `''` in DPlayer.
 
-> DEMO : <https://dplayer.mochanbw.cn/>
+> DEMO : [https://dplayer.mochanbw.cn/demo/](https://dplayer.mochanbw.cn/demo/)
+>
+> Beta : [https://dplayer.mochanbw.cn/](https://dplayer.mochanbw.cn/)
 
 |    Name    |           Default           |                                  Description (values : plain text )                                   |
 | :--------: | :-------------------------: | :---------------------------------------------------------------------------------------------------: |
@@ -44,11 +46,13 @@ Your inputs behind the URL will be automatically  surrounded by `''` in DPlayer.
 
 ### Magnet Link
 
-Use base64 encoded link (Charset UTF-8) instead using plain `magnet:?xt=urn:btih:xxx` , and **you should delete all `=` at the end of the base64 encoded link before you input it into URL**.
+>Use base64 encoded Magnet link (Charset UTF-8) instead of using plain `magnet:?xt=urn:btih:{hash}` , and **you should delete all `=` at the end of the base64 encoded link before you >put it into URL**.
 
-[Online Encoder(oschina)](https://tool.oschina.net/encrypt?type=3)
+Example Magnet Video: Sintel [https://dplayer.mochanbw.cn/demo/?magurl={base64EncodedLinkHere}](https://dplayer.mochanbw.cn/demo/?magurl=bWFnbmV0Oj94dD11cm46YnRpaDowOGFkYTVhN2E2MTgzYWFlMWUwOWQ4MzFkZjY3NDhkNTY2MDk1YTEwJmRuPVNpbnRlbCZ0cj11ZHAlM2ElMmYlMmZ0cmFja2VyLm9wZW50cmFja3Iub3JnJTNhMTMzNyZ0cj11ZHAlM2ElMmYlMmZleHBsb2RpZS5vcmclM2E2OTY5JnRyPXVkcCUzYSUyZiUyZnRyYWNrZXIuZW1waXJlLWpzLnVzJTNhMTMzNyZ0cj13c3MlM2ElMmYlMmZ0cmFja2VyLmJ0b3JyZW50Lnh5eiZ0cj13c3MlM2ElMmYlMmZ0cmFja2VyLm9wZW53ZWJ0b3JyZW50LmNvbSZ0cj13c3MlM2ElMmYlMmZ0cmFja2VyLmZhc3RjYXN0Lm56JndzPWh0dHBzJTNhJTJmJTJmd2VidG9ycmVudC5pbyUyZnRvcnJlbnRzJTJm)
 
-[Online Encoder(base64encode.org)](https://www.base64encode.org/)
+[Online Base64 Encoder(oschina)](https://tool.oschina.net/encrypt?type=3)
+
+[Online Bse64 Encoder(base64encode.org)](https://www.base64encode.org/)
 
 > Wait for update
 
