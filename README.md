@@ -1,7 +1,7 @@
 <b>English | [中文](https://github.com/MoChanBW/DPlayer-ReadyToUse/blob/master/README_zh.md)</b>
 
 <p align="center">
-<img src="https://cdn.jsdelivr.net/gh/MoChanBW/DPlayer-ReadyToUse/assets/Cloud_128px_100%.png" alt="Cloud-RTU-icon" >
+<img src="https://cdn.jsdelivr.net/gh/MoChanBW/DPlayer-ReadyToUse/assets/Cloud_100.png" alt="Cloud-RTU-icon" >
 <img src="https://cdn.jsdelivr.net/gh/MoChanBW/DPlayer-ReadyToUse/assets/anime_character_psyduck.png" alt="d(uck)player-RTU-icon" ></p>
 <h1 align="center">DPlayer-ReadyToUse</h1>
 
