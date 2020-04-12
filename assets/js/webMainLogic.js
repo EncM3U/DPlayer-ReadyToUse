@@ -12,18 +12,41 @@ function getQueryVariable(variable) {                                           
 
 function getVariable(variable)                                                 //返回变量字符串
 {
-    if (getQueryVariable(variable))                                              //检查url中变量是否存在，存在即返回值，否则执行else
+    if (getQueryVariable(variable) && variable != "urlofvid")                                              //检查url中变量是否存在，存在即返回值，否则执行else
     {
         return getQueryVariable(variable);
     }
     else {
-        if (variable == "vidtype") {                                                //vidtype未指定时返回“自动”
-            var vidtype = "auto";
-            return vidtype;
+        if (variable == "vidtype") {
+            if (getQueryVariable("magurl"))                                         //存在magurl时返回“webtorrent”
+            {
+                var vidtype = "webtorrent";
+                return vidtype;
+            }
+            else                                                                   //vidtype未指定时返回“自动”
+            {
+                var vidtype = "auto";
+                return vidtype;
+            }
         }
-        else if (variable == "vidurl") {                                            //vidurl的值未指定时返回的链接（默认播放）
-            var defaultVidUrl = 'https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm';
-            return defaultVidUrl;
+        else if (variable == "urlofvid")                                        //获得vidurl 或magurl（base64 encoded）链接
+        {
+            if (getQueryVariable("magurl")) {
+                var decodedmagurl = base64Decoder(getQueryVariable("magurl"));
+                return decodedmagurl;
+            }
+            else //如果不存在变量magurl
+            {
+                if (getQueryVariable("vidurl"))//vidurl的值存在时返回的链接
+                {
+                    return getQueryVariable("vidurl");
+                }
+                else //vidurl的值未指定时返回的链接（默认播放）
+                {
+                    var defaultVidUrl = 'https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm';
+                    return defaultVidUrl;
+                }
+            }
         }
         else if (variable == "picurl" && getQueryVariable("vidurl") == false)    //picurl的值未指定时返回的链接（默认展示图）
         {

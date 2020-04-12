@@ -13,7 +13,7 @@ const dp = new DPlayer({												//DPlayer主控制函数,详见 http://dplay
     volume: 0.7,
     mutex: true,
     video: {
-        url: getVariable("vidurl"),                                     //视频链接
+        url: getVariable("urlofvid"),                                     //视频链接
         pic: getVariable("picurl"),
         thumbnails: getVariable("thumburl"),
         type: getVariable("vidtype"),                                   //视频类型(flv.normal.hls.dash)
