@@ -1,10 +1,12 @@
 <b>English | [中文](https://github.com/MoChanBW/DPlayer-ReadyToUse/blob/master/README_zh.md)</b>
-<img src="https://cdn.jsdelivr.net/gh/MoChanBW/DPlayer-ReadyToUse/assets/anime_character_psyduck.png" alt="dplayer-RTU-icon" align="center">
+
+<p align="center">
+<img src="https://cdn.jsdelivr.net/gh/MoChanBW/DPlayer-ReadyToUse/assets/anime_character_psyduck.png" alt="dplayer-RTU-icon" ></p>
 <h1 align="center">DPlayer-ReadyToUse</h1>
 
 > Use DPlayer easily with a simple link.
 
- [![MIT license](https://img.shields.io/github/license/MoChanBW/DPlayer-ReadyToUse)](https://github.com/MoChanBW/DPlayer-ReadyToUse/blob/master/LICENSE) [![jsDelivr](https://data.jsdelivr.com/v1/package/gh/MoChanBW/DPlayer-ReadyToUse/badge?style=rounded)](https://www.jsdelivr.com/package/gh/MoChanBW/DPlayer-ReadyToUse/)
+ [![MIT license](https://img.shields.io/github/license/MoChanBW/DPlayer-ReadyToUse)](https://github.com/MoChanBW/DPlayer-ReadyToUse/blob/master/LICENSE) [![jsDelivr-count](https://data.jsdelivr.com/v1/package/gh/MoChanBW/DPlayer-ReadyToUse/badge?style=rounded)](https://www.jsdelivr.com/package/gh/MoChanBW/DPlayer-ReadyToUse)
 ## Introduction
 
 **DPlayer-ReadyToUse** is a simple pack to help people use DPlayer more easily.
