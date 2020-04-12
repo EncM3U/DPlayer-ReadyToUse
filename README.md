@@ -5,7 +5,7 @@
 <img src="https://cdn.jsdelivr.net/gh/MoChanBW/DPlayer-ReadyToUse/assets/anime_character_psyduck.png" alt="d(uck)player-RTU-icon" width="100" ></p>
 <h1 align="center">DPlayer-ReadyToUse</h1>
 
-> Use DPlayer easily with a simple link.
+> :dart: Use DPlayer easily with a simple link.
 
  [![MIT license](https://img.shields.io/github/license/MoChanBW/DPlayer-ReadyToUse?style=flat-square)](https://github.com/MoChanBW/DPlayer-ReadyToUse/blob/master/LICENSE) [![jsDelivr-count](https://data.jsdelivr.com/v1/package/gh/MoChanBW/DPlayer-ReadyToUse/badge)](https://www.jsdelivr.com/package/gh/MoChanBW/DPlayer-ReadyToUse) [![release](https://img.shields.io/github/v/release/MoChanBW/DPlayer-ReadyToUse?include_prereleases&style=flat-square)](https://github.com/MoChanBW/DPlayer-ReadyToUse/releases/)
 
@@ -56,7 +56,7 @@ Your inputs behind the URL will be automatically  surrounded by `''` in DPlayer.
 
 ## Usage
 
-`https://example.com/DPlayer-ReadyToUse/?[Name1]=[value1]&[Name2]=[value2]` etc.
+`https://example.com/?[Name1]=[value1]&[Name2]=[value2]` etc.
 
 ### Magnet Link
 

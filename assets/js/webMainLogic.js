@@ -61,7 +61,7 @@ function getVariable(variable)                                                 /
         }
         else if (variable == "playerlogo")                                                //播放器左上角logo相关
         {
-            var defaultPlayerLogo = "https://i.loli.net/2020/03/26/NeFKlai9bECDOIA.png";
+            var defaultPlayerLogo = "assets/Cloud_alpha_67.png";
             return defaultPlayerLogo;
         }
         else if (variable == "suburl" && getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false)        //字幕相关,可用cdn加速
