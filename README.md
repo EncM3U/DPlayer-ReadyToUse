@@ -18,7 +18,6 @@
   - [Magnet Link](#magnet-link)
 - [Why I did this](#why-i-did-this)
 - [License](#license)
-- [Footnote](#footnote)
 
 ## Introduction
 
@@ -86,8 +85,6 @@ Create this for new DPlayer users like me. Let others become easier to use DPlay
 ## License
 
 **DPlayer-ReadyToUse** ©MoChanBW. Released under the [MIT License](./LICENSE).
-
-## Footnote
 
 [^1]:https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/design/design-intro-e-plus.jpg
 [^2]:https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm
