@@ -52,7 +52,7 @@ function getVariable(variable) //返回变量字符串
             return (false);
         } else if (variable == "playerlogo" && getDefault()) //播放器左上角logo相关
         {
-            var defaultPlayerLogo = "assets/Cloud_alpha_67.png";
+            var defaultPlayerLogo = "assets/Cloud_Play.svg";
             return defaultPlayerLogo;
         } else if (variable == "suburl" && getDefault()) //字幕相关,可用cdn加速
         {
@@ -60,7 +60,7 @@ function getVariable(variable) //返回变量字符串
             return defaultSubUrl;
         } else if (variable == "webtitle") //页面title相关
         {
-            var defaultWebTitle = 'DPlayer';
+            var defaultWebTitle = 'DPlayer-ReadyToUse';
             return defaultWebTitle;
         } else {
             return null;
