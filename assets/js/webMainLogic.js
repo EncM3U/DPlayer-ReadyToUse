@@ -270,7 +270,7 @@ var textHolder_zh_tw = {
     contextMenuSwitchText:"切換到 : ",
     contextMenu0text: "華為智慧屏 X65",
     contextMenu1text: "華為 MatePad Pro",
-    contextMenu2text: "華為 P40 Pro+",
+    contextMenu2text: "華為 P40 Pro",
     defaultSubUrl:'assets/demoSubtitle_zh_tw.vtt',
     defaultVidUrl:"https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/intro/tvc/video-e-cn.webm",
 };
@@ -285,4 +285,4 @@ var textHolder_zh_cn = {
     defaultVidUrl:"https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro/images/intro/tvc/video-e-plus.webm",
 };
 
-var gTH = getTextHolder();
+var gTH = getTextHolder();//缩写
