@@ -52,7 +52,7 @@ function getVariable(variable) //返回变量字符串
             return (false);
         } else if (variable == "playerlogo" && getDefault()) //播放器左上角logo相关
         {
-            var defaultPlayerLogo = "assets/Cloud_Play.svg";
+            var defaultPlayerLogo = "assets/Cloud_Play.png";
             return defaultPlayerLogo;
         } else if (variable == "suburl" && getDefault()) //字幕相关,可用cdn加速
         {
