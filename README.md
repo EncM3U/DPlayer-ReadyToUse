@@ -58,7 +58,7 @@
 
 `/?{Name1}={Value1}&{Name2}={Value2}`
 
-Like this: <https://dplayer.mochanbw.cn/demo/?vidurl=https://t.cn/A6w5s7xn&autoplay=1>
+Like this: [https://dplayer.mochanbw.cn/demo/?vidurl=https://t.cn/A6w5s7xn&autoplay=1](https://dplayer.mochanbw.cn/demo/?vidurl=https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm&autoplay=1)
 
 ### Magnet Link
 
