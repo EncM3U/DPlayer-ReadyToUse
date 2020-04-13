@@ -66,16 +66,8 @@ function getVariable(variable)                                                 /
         }
         else if (variable == "suburl" && getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false)        //字幕相关,可用cdn加速
         {
-
-            if (getLang().substring(0, 2) == 'zh') {
-                var defaultSubUrl = 'assets/demoSubtitle_cn.vtt';
-                return defaultSubUrl;
-            }
-            else {
-                var defaultSubUrl = 'assets/demoSubtitle_en.vtt';
-                return defaultSubUrl;
-            }
-
+            var defaultSubUrl = gTH.defaultSubUrl;// Internationalization
+            return defaultSubUrl;
         }
         else if (variable == "webtitle")                                                //页面title相关
         {
@@ -94,9 +86,9 @@ function getContextMenu()                                                       
     if (getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false)                                     //如果url中的vidurl和magurl的参数为空，则返回默认menu
     {
         contextMenu[0] = {
-            text: getTextHolder().contextMenu0text,
+            text: gTH.contextMenu0text,
             click: (player) => {
-                dp.notice('Switch to : HUAWEI Vision X65', 2000);                               //显示通知（string，time）时间单位毫秒
+                dp.notice(gTH.contextMenuSwitchText+gTH.contextMenu0text, 2000);                               //显示通知（string，time）时间单位毫秒
                 dp.switchVideo(
                     {
                         url: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/media/tvc.mp4',
@@ -112,9 +104,9 @@ function getContextMenu()                                                       
             },
         };
         contextMenu[1] = {
-            text: getTextHolder().contextMenu1text,
+            text: gTH.contextMenu1text,
             click: (player) => {
-                dp.notice("Switch to : HUAWEI MatePad Pro", 2000);                              //显示通知（string，time）时间单位毫秒
+                dp.notice(gTH.contextMenuSwitchText+gTH.contextMenu1text, 2000);                              //显示通知（string，time）时间单位毫秒
                 dp.switchVideo(
                     {
                         url: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/tablets/matepad-pro/img/video/huawei-matepad-pro-all-video.mp4',
@@ -131,9 +123,9 @@ function getContextMenu()                                                       
 
         };
         contextMenu[2] = {
-            text: getTextHolder().contextMenu2text,
+            text: gTH.contextMenu2text,
             click: (player) => {
-                dp.notice("Switch to : HUAWEI P40 Pro+", 2000);                              //显示通知（string，time）时间单位毫秒
+                dp.notice(gTH.contextMenuSwitchText+gTH.contextMenu2text, 2000);                              //显示通知（string，time）时间单位毫秒
                 dp.switchVideo(
                     {
                         url: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm',
@@ -150,7 +142,7 @@ function getContextMenu()                                                       
 
         };
         contextMenu[3] = {
-            text: getTextHolder().Manual,
+            text: gTH.Manual,
             link: "https://github.com/MoChanBW/DPlayer-ReadyToUse/",
         };
         return contextMenu;
@@ -264,21 +256,33 @@ function getTextHolder()
 // 
 var textHolder_en = {
     Manual: "Manual",
+    contextMenuSwitchText:"Switch to : ",
     contextMenu0text: "HUAWEI Vision X65",
     contextMenu1text: "HUAWEI MatePad Pro",
     contextMenu2text: "HUAWEI P40 Pro+",
+    contextMenu2Notice:"Switch to : HUAWEI P40 Pro+",
+    defaultSubUrl:'assets/demoSubtitle_en.vtt',
+    defaultVidUrl:"https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm",
 };
 
 var textHolder_zh_tw = {
     Manual: "使用說明",
+    contextMenuSwitchText:"切換到 : ",
     contextMenu0text: "華為智慧屏 X65",
     contextMenu1text: "華為 MatePad Pro",
     contextMenu2text: "華為 P40 Pro+",
+    defaultSubUrl:'assets/demoSubtitle_zh_tw.vtt',
+    defaultVidUrl:"https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/intro/tvc/video-e-cn.webm",
 };
 
 var textHolder_zh_cn = {
     Manual: "使用说明",
+    contextMenuSwitchText:"切换到 : ",
     contextMenu0text: "华为智慧屏 X65",
     contextMenu1text: "华为 MatePad Pro",
-    contextMenu2text: "华为 P40 Pro+",
+    contextMenu2text: "华为 P40 Pro",
+    defaultSubUrl:'assets/demoSubtitle_zh_cn.vtt',
+    defaultVidUrl:"https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro/images/intro/tvc/video-e-plus.webm",
 };
+
+var gTH = getTextHolder();

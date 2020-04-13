@@ -22,23 +22,22 @@
 
 :balloon:**DPlayer-ReadyToUse** is a simple pack to help people use DPlayer more easily.
 
-* :rocket:Using simple URL to access advanced settings for [![DPlayer](https://img.shields.io/badge/Github-MoePlayer%2FDPlayer-f8b500?logo=Github&style=flat-square)](https://github.com/MoePlayer/DPlayer/) .  
+* :rocket:Using simple URL to access advanced settings for [![DPlayer](https://img.shields.io/badge/Github-MoePlayer%2FDPlayer-FFAF00?logo=Github&style=flat-square)](https://github.com/MoePlayer/DPlayer/)
 
-* :beginner: Using DPlayer in Markdown easily.
+* :beginner: Using DPlayer in Markdown easily
   
-
 ## Options
 
 :white_check_mark:You can custom your player instance with those variables.
 
 :pencil:**Variable Format : Plain Text , unless clearly declared.**
 
-> :arrow_right:[DEMO](https://dplayer.mochanbw.cn/demo/) (stable) [![Now on Cloudflare Workers](https://img.shields.io/badge/DEMO%20on-Cloudflare%20Workers-f38020?logo=cloudflare&logoColor=f38020&style=flat-square)](https://dplayer.mochanbw.cn/demo/) [![Uptimerobot](https://img.shields.io/uptimerobot/status/m784729343-649b372cd0c06203a3e597ca?label=DEMO%20status&logo=statuspage&logoColor=44CC11&style=flat-square)](https://stats.mochanbw.cn)
+> :arrow_right:[DEMO](https://dplayer.mochanbw.cn/demo/) (stable) [![DEMO on Cloudflare Workers](https://img.shields.io/badge/DEMO%20on-Cloudflare%20Workers-f38020?logo=cloudflare&logoColor=f38020&style=flat-square)](https://dplayer.mochanbw.cn/demo/) [![DEMO Status](https://img.shields.io/uptimerobot/status/m784729343-649b372cd0c06203a3e597ca?label=DEMO%20status&logo=statuspage&logoColor=44CC11&style=flat-square)](https://stats.mochanbw.cn)
 >
-> :arrow_right:[BETA](https://dplayer.mochanbw.cn/) (slow) [![Uptimerobot](https://img.shields.io/uptimerobot/status/m784624816-909fad502274ad089ac56ba8?label=BETA%20status&logo=statuspage&logoColor=44CC11&style=flat-square)](https://stats.mochanbw.cn)
+> :arrow_right:[BETA](https://dplayer.mochanbw.cn/) (slow) [![BETA Status](https://img.shields.io/uptimerobot/status/m784624816-909fad502274ad089ac56ba8?label=BETA%20status&logo=statuspage&logoColor=44CC11&style=flat-square)](https://stats.mochanbw.cn)
 
 |    Name    |            Default            |                                              Description                                              |
-| :--------: | :---------------------------: | :---------------------------------------------------------------------------------------------------: |
+|:----------:|:-----------------------------:|:-----------------------------------------------------------------------------------------------------:|
 |  autoplay  |             false             |                                    video autoplay , values: 1 , 0                                     |
 |  danmaku   |        Wait for update        |                                                                                                       |
 |    lang    |      navigator.language       |                                      values: zh-cn , zh-tw , en                                       |
@@ -63,7 +62,7 @@ Like this: <https://dplayer.mochanbw.cn/demo/?vidurl=https://t.cn/A6w5s7xn&autop
 
 ### Magnet Link
 
-Play magnet video based on [![webtorrent](https://img.shields.io/badge/Github-webtorrent%2Fwebtorrent-3eb370?logo=Github&style=flat-square)](https://github.com/webtorrent/webtorrent).
+Play magnet video based on [![webtorrent](https://img.shields.io/badge/Github-webtorrent%2Fwebtorrent-35B44F?logo=Github&style=flat-square)](https://github.com/webtorrent/webtorrent)
 
 Link Format e.g.`https://yourdomain/?magurl={base64EncodedMagnetLinkHere}`
 
@@ -82,6 +81,8 @@ DEMO webtorrent Video: **[Sintel](https://dplayer.mochanbw.cn/demo/?magurl=bWFnb
 ## Author
 
 **DPlayer-ReadyToUse** © [MoChanBW](https://github.com/MoChanBW/). Released under the [MIT License](./LICENSE).
+
+Contribute with [KLPY](https://github.com/KLPY-shuai/)
 
 [picurl]:https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/design/design-intro-e-plus.jpg
 [videourl]:https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm
