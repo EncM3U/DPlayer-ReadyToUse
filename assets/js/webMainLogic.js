@@ -248,7 +248,8 @@ function base64Decoder(encodedString) {                                         
     return decoded;
 }
 
-function getTextHolder()//国际化
+//国际化
+function getTextHolder()
 {
     if (getLang() == "zh-cn") {
         return textHolder_zh_cn;
@@ -260,7 +261,7 @@ function getTextHolder()//国际化
         return textHolder_en;
     }
 }
-
+// 
 var textHolder_en = {
     Manual: "Manual",
     contextMenu0text: "HUAWEI Vision X65",
