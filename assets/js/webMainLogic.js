@@ -67,7 +67,7 @@ function getVariable(variable)                                                 /
         else if (variable == "suburl" && getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false)        //字幕相关,可用cdn加速
         {
 
-            if (getBrowserLang().substring(0, 2) == 'zh') {
+            if (getLang().substring(0, 2) == 'zh') {
                 var defaultSubUrl = 'assets/demoSubtitle_cn.vtt';
                 return defaultSubUrl;
             }
@@ -91,10 +91,10 @@ function getVariable(variable)                                                 /
 function getContextMenu()                                                           //返回右键的自定义功能目录（数组）
 {
     var contextMenu = [];
-    if (getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false)                                     //如果url中的vidurl参数为空，则返回默认menu
+    if (getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false)                                     //如果url中的vidurl和magurl的参数为空，则返回默认menu
     {
         contextMenu[0] = {
-            text: "HUAWEI Vision X65",
+            text: getTextHolder().contextMenu0text,
             click: (player) => {
                 dp.notice('Switch to : HUAWEI Vision X65', 2000);                               //显示通知（string，time）时间单位毫秒
                 dp.switchVideo(
@@ -112,7 +112,7 @@ function getContextMenu()                                                       
             },
         };
         contextMenu[1] = {
-            text: "HUAWEI MatePad Pro",
+            text: getTextHolder().contextMenu1text,
             click: (player) => {
                 dp.notice("Switch to : HUAWEI MatePad Pro", 2000);                              //显示通知（string，time）时间单位毫秒
                 dp.switchVideo(
@@ -131,7 +131,7 @@ function getContextMenu()                                                       
 
         };
         contextMenu[2] = {
-            text: "HUAWEI P40 Pro+",
+            text: getTextHolder().contextMenu2text,
             click: (player) => {
                 dp.notice("Switch to : HUAWEI P40 Pro+", 2000);                              //显示通知（string，time）时间单位毫秒
                 dp.switchVideo(
@@ -150,7 +150,7 @@ function getContextMenu()                                                       
 
         };
         contextMenu[3] = {
-            text: "Instructions",
+            text: getTextHolder().Manual,
             link: "https://github.com/MoChanBW/DPlayer-ReadyToUse/",
         };
         return contextMenu;
@@ -193,18 +193,35 @@ function getTorFalse(key) {                                                     
 //   };
 
 
-function getBrowserLang() {                                                             //from https://blog.csdn.net/qq_26212731/java/article/details/78457198
-    var lang = navigator.language || navigator.userLanguage;                            //常规浏览器语言和IE浏览器
-    if (lang == 'zh-tw' || lang == 'zh-hk') {
-        return 'zh-tw';
+function getLang() {                                                                 //获得语言,若未指定则返回浏览器语言
+    if (getQueryVariable("lang")) {
+        var lang = getQueryVariable("lang")
+        if (lang == 'zh-tw' || lang == 'zh-hk') {
+            return 'zh-tw';
+        }
+        else if (lang.substring(0, 2) == 'zh') {
+            return 'zh-cn';
+        }
+        else {
+            return 'en'
+        }
     }
-    else if (lang.substring(0, 2) == 'zh') {
-        return 'zh-cn';
-    }
-    else {
-        return 'en'
+    else                                                                                        //from https://blog.csdn.net/qq_26212731/java/article/details/78457198
+    {
+        var lang = navigator.language || navigator.userLanguage;                            //常规浏览器语言和IE浏览器
+        if (lang == 'zh-tw' || lang == 'zh-hk') {
+            return 'zh-tw';
+        }
+        else if (lang.substring(0, 2) == 'zh') {
+            return 'zh-cn';
+        }
+        else {
+            return 'en'
+        }
     }
 }
+
+
 
 
 function base64Decoder(encodedString) {                                                              //可以用 https://tool.oschina.net/encrypt?type=3  加密
@@ -231,14 +248,36 @@ function base64Decoder(encodedString) {                                         
     return decoded;
 }
 
+function getTextHolder()//国际化
+{
+    if (getLang() == "zh-cn") {
+        return textHolder_zh_cn;
+    }
+    else if (getLang() == "zh-tw") {
+        return textHolder_zh_tw;
+    }
+    else {
+        return textHolder_en;
+    }
+}
+
 var textHolder_en = {
-    "Instructions": "Instructions",
+    Manual: "Manual",
+    contextMenu0text: "HUAWEI Vision X65",
+    contextMenu1text: "HUAWEI MatePad Pro",
+    contextMenu2text: "HUAWEI P40 Pro+",
 };
 
 var textHolder_zh_tw = {
-
+    Manual: "使用說明",
+    contextMenu0text: "華為智慧屏 X65",
+    contextMenu1text: "華為 MatePad Pro",
+    contextMenu2text: "華為 P40 Pro+",
 };
 
 var textHolder_zh_cn = {
-
+    Manual: "使用说明",
+    contextMenu0text: "华为智慧屏 X65",
+    contextMenu1text: "华为 MatePad Pro",
+    contextMenu2text: "华为 P40 Pro+",
 };

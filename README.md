@@ -33,7 +33,7 @@
 
 :pencil:**Variable Format : Plain Text , unless clearly declared.**
 
-> :arrow_right:[DEMO](https://dplayer.mochanbw.cn/demo/) (stable) [![Now on Cloudflare Workers](https://img.shields.io/badge/Now%20on-Cloudflare%20Workers-f38020?logo=cloudflare&logoColor=f38020&style=flat-square)](https://dplayer.mochanbw.cn/demo/) [![Uptimerobot](https://img.shields.io/uptimerobot/status/m784729343-649b372cd0c06203a3e597ca?label=DEMO%20status&logo=statuspage&logoColor=68be8d&style=flat-square)](https://stats.uptimerobot.com/0ABnpI22v2)
+> :arrow_right:[DEMO](https://dplayer.mochanbw.cn/demo/) (stable) [![Now on Cloudflare Workers](https://img.shields.io/badge/DEMO%20on-Cloudflare%20Workers-f38020?logo=cloudflare&logoColor=f38020&style=flat-square)](https://dplayer.mochanbw.cn/demo/) [![Uptimerobot](https://img.shields.io/uptimerobot/status/m784729343-649b372cd0c06203a3e597ca?label=status&logo=statuspage&logoColor=68be8d&style=flat-square)](https://stats.uptimerobot.com/0ABnpI22v2)
 >
 > :arrow_right:[BETA](https://dplayer.mochanbw.cn/) (slow)
 
@@ -41,6 +41,7 @@
 | :--------: | :---------------------------: | :---------------------------------------------------------------------------------------------------: |
 |  autoplay  |             false             |                                    video autoplay , values: 1 , 0                                     |
 |  danmaku   |        Wait for update        |                                                                                                       |
+|    lang    |      navigator.language       |                                      values: zh-cn , zh-tw , en                                       |
 |    live    |             false             |          live mode , values: 1 , 0. Also see [#live](https://dplayer.js.org/guide.html#live)          |
 |   magurl   |               -               |                                   see [#Magnet Link](#magnet-link)                                    |
 |   picurl   |   [default picurl][picurl]    |                                          url of video poster                                          |

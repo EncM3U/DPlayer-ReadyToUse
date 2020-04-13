@@ -5,7 +5,7 @@ const dp = new DPlayer({												//DPlayer主控制函数,详见 http://dplay
     autoplay: getTorFalse("autoplay"),									//自动播放 参数autoplay 值为1或0 默认false
     theme: '#8470FF',
     loop: false,
-    //lang: getBrowserLang(),                                           //DPlayer 自带有获取browser lang的功能，这个函数可以给字幕/视频用
+    lang: getLang(),                                           //DPlayer 自带有获取browser lang的功能，这个函数可以给自定义
     screenshot: true,
     hotkey: true,
     preload: 'auto',
@@ -21,7 +21,7 @@ const dp = new DPlayer({												//DPlayer主控制函数,详见 http://dplay
     subtitle: {
         url: getVariable("suburl"),                                     //字幕链接，vtt格式
         type: 'webvtt',
-        fontSize: '20px',
+        fontSize: '25px',
         bottom: '10%',
         color: '#b7daff',
     },
