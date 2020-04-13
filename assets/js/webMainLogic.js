@@ -244,7 +244,7 @@ var textHolder_en = {
     contextMenu2Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/design/design-intro-e-plus.jpg',
     defaultSubUrl: 'assets/demoSubtitle_en.vtt',
     defaultVidUrl: "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm",
-    defaultPicUrl: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/design/design-intro-e-plus.jpg',
+    defaultPicUrl: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
 };
 
 var textHolder_zh_tw = {
@@ -261,7 +261,7 @@ var textHolder_zh_tw = {
     contextMenu2Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/design/design-intro-e-plus.jpg',
     defaultSubUrl: 'assets/demoSubtitle_zh_tw.vtt',
     defaultVidUrl: "https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/intro/tvc/video-e-cn.webm",
-    defaultPicUrl: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/design/design-intro-e-plus.jpg',
+    defaultPicUrl: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
 };
 
 var textHolder_zh_cn = {
@@ -278,7 +278,7 @@ var textHolder_zh_cn = {
     contextMenu2Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/design/design-intro-e-plus.jpg',
     defaultSubUrl: 'assets/demoSubtitle_zh_cn.vtt',
     defaultVidUrl: "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro/images/intro/tvc/video-e-plus.webm",
-    defaultPicUrl: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/design/design-intro-e-plus.jpg',
+    defaultPicUrl: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
 };
 
 var gTH = getTextHolder(); //缩写
