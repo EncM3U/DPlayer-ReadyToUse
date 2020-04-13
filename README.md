@@ -1,8 +1,8 @@
 <b>English | [中文](./README_zh.md)</b>
 
 <p align="center">
-<img src="https://cdn.jsdelivr.net/gh/MoChanBW/DPlayer-ReadyToUse/assets/Cloud_100.png" alt="Cloud-RTU-icon" width="100" >
-<img src="https://cdn.jsdelivr.net/gh/MoChanBW/DPlayer-ReadyToUse/assets/anime_character_psyduck.png" alt="d(uck)player-RTU-icon" width="100" ></p>
+<img src="https://cdn.jsdelivr.net/gh/MoChanBW/DPlayer-ReadyToUse/assets/Cloud_Play.svg" alt="Cloud-Play-icon" width="100" >
+</p>
 <h1 align="center">DPlayer-ReadyToUse</h1>
 
 > :dart: Use DPlayer easily with a simple link.
