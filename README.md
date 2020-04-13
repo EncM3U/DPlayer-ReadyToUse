@@ -1,7 +1,7 @@
 <b>English | [中文](./README_zh.md)</b>
 
 <p align="center">
-<img src="https://cdn.jsdelivr.net/gh/MoChanBW/DPlayer-ReadyToUse/assets/Cloud_Play.svg" alt="Cloud-Play-icon" width="100" >
+<img src="https://cdn.jsdelivr.net/gh/MoChanBW/DPlayer-ReadyToUse/assets/Cloud_Play.png" alt="Cloud-Play-icon" width="100" >
 </p>
 <h1 align="center">DPlayer-ReadyToUse</h1>
 
