@@ -33,7 +33,7 @@
 
 :pencil:**Variable Format : Plain Text , unless clearly declared.**
 
-> :arrow_right:[DEMO](https://dplayer.mochanbw.cn/demo/) (stable) [![Now on Cloudflare Workers](https://img.shields.io/badge/DEMO%20on-Cloudflare%20Workers-f38020?logo=cloudflare&logoColor=f38020&style=flat-square)](https://dplayer.mochanbw.cn/demo/) [![Uptimerobot](https://img.shields.io/uptimerobot/status/m784729343-649b372cd0c06203a3e597ca?label=status&logo=statuspage&logoColor=68be8d&style=flat-square)](https://stats.uptimerobot.com/0ABnpI22v2)
+> :arrow_right:[DEMO](https://dplayer.mochanbw.cn/demo/) (stable) [![Now on Cloudflare Workers](https://img.shields.io/badge/DEMO%20on-Cloudflare%20Workers-f38020?logo=cloudflare&logoColor=f38020&style=flat-square)](https://dplayer.mochanbw.cn/demo/) [![Uptimerobot](https://img.shields.io/uptimerobot/status/m784729343-649b372cd0c06203a3e597ca?label=DEMO%20status&logo=statuspage&logoColor=68be8d&style=flat-square)](https://stats.uptimerobot.com/0ABnpI22v2)
 >
 > :arrow_right:[BETA](https://dplayer.mochanbw.cn/) (slow)
 
@@ -57,17 +57,19 @@
 
 ## Usage
 
-`https://example.com/?[Name1]=[value1]&[Name2]=[value2]` etc.
+`/?{Name1}={Value1}&{Name2}={Value2}`
+
+Like this: <https://dplayer.mochanbw.cn/demo/?vidurl=https://t.cn/A6w5s7xn&autoplay=1>
 
 ### Magnet Link
 
 Play magnet video based on [![webtorrent](https://img.shields.io/badge/Github-webtorrent%2Fwebtorrent-3eb370?logo=Github&style=flat-square)](https://github.com/webtorrent/webtorrent).
 
-e.g.`https://example.com/?magurl={base64EncodedMagnetLink}`
+Link Format e.g.`https://yourdomain/?magurl={base64EncodedMagnetLinkHere}`
 
 > :warning: Use base64 encoded Magnet link (charset UTF-8) instead.
 >
-> :heavy_exclamation_mark: **you should delete all "`=`" at the end of base64 encoded link before you put it into URL**.
+> :heavy_exclamation_mark: **you should delete all "`=`" at the end of the encoded link before you put it into URL**.
 
 DEMO webtorrent Video: **[Sintel](https://dplayer.mochanbw.cn/demo/?magurl=bWFnbmV0Oj94dD11cm46YnRpaDowOGFkYTVhN2E2MTgzYWFlMWUwOWQ4MzFkZjY3NDhkNTY2MDk1YTEwJmRuPVNpbnRlbCZ0cj11ZHAlM2ElMmYlMmZ0cmFja2VyLm9wZW50cmFja3Iub3JnJTNhMTMzNyZ0cj11ZHAlM2ElMmYlMmZleHBsb2RpZS5vcmclM2E2OTY5JnRyPXVkcCUzYSUyZiUyZnRyYWNrZXIuZW1waXJlLWpzLnVzJTNhMTMzNyZ0cj13c3MlM2ElMmYlMmZ0cmFja2VyLmJ0b3JyZW50Lnh5eiZ0cj13c3MlM2ElMmYlMmZ0cmFja2VyLm9wZW53ZWJ0b3JyZW50LmNvbSZ0cj13c3MlM2ElMmYlMmZ0cmFja2VyLmZhc3RjYXN0Lm56JndzPWh0dHBzJTNhJTJmJTJmd2VidG9ycmVudC5pbyUyZnRvcnJlbnRzJTJm)**
 
