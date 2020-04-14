@@ -62,20 +62,25 @@ function getVariable(variable) //返回变量字符串
         {
             var defaultWebTitle = 'DPlayer-ReadyToUse';
             return defaultWebTitle;
+        } else if (variable == "favicon") //favicon相关
+        {
+            var defaultFavicon = 'assets/Cloud_Play.svg';
+            return defaultFavicon;
         } else {
             return null;
         }
     }
 }
 
-function getDefault()//查看url中的vidurl和magurl是否定义，是，即非默认状态
+function getDefault() //查看url中的vidurl和magurl是否定义，是，即非默认状态
 {
-    if(getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false){
+    if (getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false) {
         return true;
-    }else{
+    } else {
         return false;
     }
 }
+
 function getContextMenu() //返回右键的自定义功能目录（数组）
 {
     var contextMenu = [];
@@ -165,12 +170,36 @@ function getTorFalse(key) { //根据url中的1或0返回布伦值,默认false
     }
 })();
 
-//window.onfocus = function () {                                                      //标签页焦点更改
-//    document.title = '恢复正常了...';
-//   };
-//   window.onblur = function () {
-//    document.title = '快回来~页面崩溃了';
-//   };
+
+
+(function urlChangeFavicon() { //用js更改favicon（一次性）
+    document.head = document.head || document.getElementsByTagName('head')[0];
+    var link = document.createElement('link'),
+        oldLink = document.getElementById('dynamic-favicon'),
+        src = getVariable("favicon");
+    link.id = 'dynamic-favicon';
+    link.rel = 'icon';
+    link.href = src;
+    if (oldLink) {
+        document.head.removeChild(oldLink);
+    }
+    document.head.appendChild(link);
+})();
+
+
+/*
+window.onfocus = function () { //标签页焦点更改
+    if (blurYet == 1) {
+        document.title = '恢复正常了...';
+        this.setTimeout("document.title = getVariable('webtitle')", 2333)
+
+    }
+};
+window.onblur = function () {
+    blurYet = 1;
+    document.title = '快回来~页面崩溃了';
+};
+*/
 
 function base64Decoder(encodedString) { //可以用 https://tool.oschina.net/encrypt?type=3  加密
     let Base64 = { //from https://www.jianshu.com/p/82afa633033e
