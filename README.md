@@ -7,7 +7,7 @@
 
 > :dart: Use DPlayer easily with a simple link.
 
-  [![jsDelivr-count](https://img.shields.io/jsdelivr/gh/hm/MoChanBW/DPlayer-ReadyToUse?color=%23e84d3d&logo=jsDelivr&style=flat-square&cacheSeconds=3600)](https://www.jsdelivr.com/package/gh/MoChanBW/DPlayer-ReadyToUse) [![release](https://img.shields.io/github/v/release/MoChanBW/DPlayer-ReadyToUse?include_prereleases&style=flat-square&logo=Github&cacheSeconds=3600)](https://github.com/MoChanBW/DPlayer-ReadyToUse/releases/)[![GitHub commits since latest release](https://img.shields.io/github/commits-since/MoChanBW/DPlayer-ReadyToUse/latest?logo=Github&style=flat-square&cacheSeconds=3600)](https://github.com/MoChanBW/DPlayer-ReadyToUse/commit/master/) [![MIT license](https://img.shields.io/github/license/MoChanBW/DPlayer-ReadyToUse?style=flat-square&cacheSeconds=36000)](https://github.com/MoChanBW/DPlayer-ReadyToUse/blob/master/LICENSE)
+  [![jsDelivr-count](https://img.shields.io/jsdelivr/gh/hm/MoChanBW/DPlayer-ReadyToUse?color=%23e84d3d&logo=jsDelivr&style=flat-square&cacheSeconds=3600)](https://www.jsdelivr.com/package/gh/MoChanBW/DPlayer-ReadyToUse) [![release](https://img.shields.io/github/v/release/MoChanBW/DPlayer-ReadyToUse?include_prereleases&style=flat-square&logo=Github&cacheSeconds=3600)](https://github.com/MoChanBW/DPlayer-ReadyToUse/releases/) [![GitHub commits since latest release](https://img.shields.io/github/commits-since/MoChanBW/DPlayer-ReadyToUse/latest?logo=Github&style=flat-square&cacheSeconds=3600)](https://github.com/MoChanBW/DPlayer-ReadyToUse/commit/master/) [![MIT license](https://img.shields.io/github/license/MoChanBW/DPlayer-ReadyToUse?style=flat-square&cacheSeconds=36000)](https://github.com/MoChanBW/DPlayer-ReadyToUse/blob/master/LICENSE)
 
 ## Table Of Content
 
