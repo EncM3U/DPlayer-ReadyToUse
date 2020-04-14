@@ -1,25 +1,25 @@
-const dp = new DPlayer({												//DPlayer主控制函数,详见 http://dplayer.js.org
+const dp = new DPlayer({ //DPlayer主控制函数,详见 http://dplayer.js.org
     container: document.getElementById('dplayer'),
     screenshot: true,
-    live: getTorFalse("live"),                                          //是否开启直播模式
-    autoplay: getTorFalse("autoplay"),									//自动播放 参数autoplay 值为1或0 默认false
+    live: getTorFalse("live"), //是否开启直播模式
+    autoplay: getTorFalse("autoplay"), //自动播放 参数autoplay 值为1或0 默认false
     theme: '#8470FF',
     loop: false,
-    lang: getLang(),                                           //DPlayer 自带有获取browser lang的功能，这个函数可以给自定义
+    lang: getLang(), //DPlayer 自带有获取browser lang的功能，这个函数可以给自定义
     screenshot: true,
     hotkey: true,
-    preload: 'auto',
-    logo: getVariable("playerlogo"),          //67% 不透明度左上角icon
+    preload: getVariable("preload"),
+    logo: getVariable("playerlogo"), //67% 不透明度左上角icon
     volume: 0.7,
     mutex: true,
     video: {
-        url: getVariable("urlofvid"),                                     //视频链接
+        url: getVariable("urlofvid"), //视频链接
         pic: getVariable("picurl"),
         thumbnails: getVariable("thumburl"),
-        type: getVariable("vidtype"),                                   //视频类型(flv.normal.hls.dash)
+        type: getVariable("vidtype"), //视频类型(flv.normal.hls.dash)
     },
     subtitle: {
-        url: getVariable("suburl"),                                     //字幕链接，vtt格式
+        url: getVariable("suburl"), //字幕链接，vtt格式
         type: 'webvtt',
         fontSize: '25px',
         bottom: '10%',
@@ -34,8 +34,8 @@ const dp = new DPlayer({												//DPlayer主控制函数,详见 http://dplay
     //  user: 'DIYgod',
     // bottom: '15%',
     // unlimited: true,
-    // },
-    contextmenu: getContextMenu(),                                      //默认contextMenu,自定义功能稍后添加
+    //},
+    contextmenu: getContextMenu(), //默认contextMenu,自定义功能稍后添加
     //highlight: [
     //    {
     //        text: 'marker for 20s',

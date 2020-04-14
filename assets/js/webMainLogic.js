@@ -66,6 +66,9 @@ function getVariable(variable) //返回变量字符串
         {
             var defaultFavicon = 'assets/Cloud_Play.svg';
             return defaultFavicon;
+        }else if (variable == "preload") //preload相关
+        {
+            return "auto";
         } else {
             return null;
         }
@@ -191,7 +194,7 @@ function getTorFalse(key) { //根据url中的1或0返回布伦值,默认false
 window.onfocus = function () { //标签页焦点更改
     if (blurYet == 1) {
         document.title = '恢复正常了...';
-        this.setTimeout("document.title = getVariable('webtitle')", 2333)
+        this.setTimeout("document.title = getVariable('webtitle')", 2333)//delay 2333ms
 
     }
 };
@@ -258,7 +261,7 @@ function getTextHolder() {
         return textHolder_en;
     }
 }
-// 
+
 var textHolder_en = {
     Manual: "Manual",
     contextMenuSwitchText: "Switch to : ",
@@ -310,4 +313,4 @@ var textHolder_zh_cn = {
     defaultPicUrl: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
 };
 
-var gTH = getTextHolder(); //缩写
+var gTH =getTextHolder();//缩写
