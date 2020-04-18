@@ -58,6 +58,8 @@
 
 `/?{Name1}={Value1}&{Name2}={Value2}`
 
+DPlayer-RTU Easy-Gen : [here](https://dplayer.mochanbw.cn/generator/)(Unavailable)
+
 Like this: [https://dplayer.mochanbw.cn/demo/?vidurl=https://t.cn/A6w5s7xn&autoplay=1][Likethis]
 
 ### Magnet Link
