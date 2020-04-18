@@ -183,10 +183,11 @@ function getTorFalse(key) { //根据url中的1或0返回布伦值,默认false
     link.id = 'dynamic-favicon';
     link.rel = 'icon';
     link.href = src;
-    if (oldLink) {
+    if (getQueryVariable("favicon") && oldLink) {//如果favicon未指定且oldlink存在
         document.head.removeChild(oldLink);
+        document.head.appendChild(link);
     }
-    document.head.appendChild(link);
+    
 })();
 
 
