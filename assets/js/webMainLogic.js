@@ -62,11 +62,10 @@ function getVariable(variable) //返回变量字符串
         {
             var defaultWebTitle = 'DPlayer-ReadyToUse';
             return defaultWebTitle;
-        } else if (variable == "favicon") //favicon相关
+        } else if (variable == "favicon") //favicon用下面的函数指定
         {
-            var defaultFavicon = 'assets/Cloud_Play.svg';
-            return defaultFavicon;
-        }else if (variable == "preload") //preload相关
+            return "assets/Cloud_Play.svg";
+        } else if (variable == "preload") //preload相关
         {
             return "auto";
         } else {
@@ -167,29 +166,22 @@ function getTorFalse(key) { //根据url中的1或0返回布伦值,默认false
 }
 
 (function writeWebTitle() { //获取url中webtitle的参数并写入<title>（立即执行）
-    if (getVariable("webtitle")) {
-        var webTitle = getVariable("webtitle");
-        document.title = webTitle;
-    }
+    var webTitle = getVariable("webtitle");
+    document.title = webTitle;
 })();
 
-
-
-(function urlChangeFavicon() { //用js更改favicon（一次性）
+(function urlChangeFavicon() { //用js更改favicon（立即执行）
     document.head = document.head || document.getElementsByTagName('head')[0];
     var link = document.createElement('link'),
-        oldLink = document.getElementById('dynamic-favicon'),
-        src = getVariable("favicon");
+        oldLink = document.getElementById('dynamic-favicon');
     link.id = 'dynamic-favicon';
     link.rel = 'icon';
-    link.href = src;
-    if (getQueryVariable("favicon") && oldLink) {//如果favicon未指定且oldlink存在
-        document.head.removeChild(oldLink);
+    link.href = getVariable("favicon");
+    if (getVariable("favicon")) { //如果favicon未指定且oldlink存在
+       // document.head.removeChild(oldLink);
         document.head.appendChild(link);
     }
-    
 })();
-
 
 /*
 window.onfocus = function () { //标签页焦点更改
@@ -314,4 +306,4 @@ var textHolder_zh_cn = {
     defaultPicUrl: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
 };
 
-var gTH =getTextHolder();//缩写
+var gTH = getTextHolder(); //缩写
