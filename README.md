@@ -7,7 +7,7 @@
 
 > :dart: Use DPlayer easily with a simple link.
 
-  [![jsDelivr-count](https://img.shields.io/jsdelivr/gh/hm/MoChanBW/DPlayer-ReadyToUse?color=%23e84d3d&logo=jsDelivr&style=flat-square&cacheSeconds=3600)](https://www.jsdelivr.com/package/gh/MoChanBW/DPlayer-ReadyToUse) [![Latest Release](https://img.shields.io/github/v/release/MoChanBW/DPlayer-ReadyToUse?include_prereleases&style=flat-square&logo=Github&cacheSeconds=3600)](https://github.com/MoChanBW/DPlayer-ReadyToUse/releases/) [![PRs_Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/MoChanBW/DPlayer-ReadyToUse/commit/master/) [![MIT license](https://img.shields.io/github/license/MoChanBW/DPlayer-ReadyToUse?style=flat-square&cacheSeconds=36000)](https://github.com/MoChanBW/DPlayer-ReadyToUse/blob/master/LICENSE)
+  [![jsDelivr-count](https://img.shields.io/jsdelivr/gh/hm/MoChanBW/DPlayer-ReadyToUse?color=%23e84d3d&logo=jsDelivr&style=flat-square&cacheSeconds=3600)](https://www.jsdelivr.com/package/gh/MoChanBW/DPlayer-ReadyToUse) [![Latest Release](https://img.shields.io/github/v/release/MoChanBW/DPlayer-ReadyToUse?include_prereleases&style=flat-square&logo=GitHub&cacheSeconds=3600)](https://github.com/MoChanBW/DPlayer-ReadyToUse/releases/) [![PRs_Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/MoChanBW/DPlayer-ReadyToUse/commit/master/) [![MIT license](https://img.shields.io/github/license/MoChanBW/DPlayer-ReadyToUse?style=flat-square&cacheSeconds=36000)](https://github.com/MoChanBW/DPlayer-ReadyToUse/blob/master/LICENSE)
 
 ## Table Of Content
 
@@ -22,7 +22,7 @@
 
 :balloon:**DPlayer-ReadyToUse** is a simple pack to help people use DPlayer more easily.
 
-- :rocket:Using simple URL to access advanced settings for [![DPlayer](https://img.shields.io/badge/Github-MoePlayer%2FDPlayer-FFAF00?logo=Github&style=flat-square&cacheSeconds=36000)](https://github.com/MoePlayer/DPlayer/)
+- :rocket:Using simple URL to access advanced settings for [![DPlayer](https://img.shields.io/badge/GitHub-MoePlayer%2FDPlayer-FFAF00?logo=GitHub&style=flat-square&cacheSeconds=36000)](https://github.com/MoePlayer/DPlayer/)
 
 - :beginner: Using DPlayer in Markdown easily
   
@@ -64,7 +64,7 @@ Like this: [https://dplayer.mochanbw.cn/demo/?vidurl=https://t.cn/A6w5s7xn&autop
 
 ### Magnet Link
 
-Play magnet video based on [![webtorrent](https://img.shields.io/badge/Github-webtorrent%2Fwebtorrent-35B44F?logo=Github&style=flat-square&cacheSeconds=36000)](https://github.com/webtorrent/webtorrent)
+Play magnet video based on [![webtorrent](https://img.shields.io/badge/GitHub-webtorrent%2Fwebtorrent-35B44F?logo=GitHub&style=flat-square&cacheSeconds=36000)](https://github.com/webtorrent/webtorrent)
 
 Link Format e.g.`https://yourdomain/?magurl={base64EncodedMagnetLinkHere}`
 
