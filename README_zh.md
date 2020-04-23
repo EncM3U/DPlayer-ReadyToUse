@@ -82,7 +82,7 @@ webtorrect示例视频: **[Sintel](https://dplayer.mochanbw.cn/demo/?magurl=bWFn
 
 **DPlayer-ReadyToUse** © [MoChanBW](https://github.com/MoChanBW/). 根据 [MIT License](./LICENSE) 发行
 
-与README中文版译者[KLPY-FeiChangShuai](https://github.com/KLPY-Shuai/)合作
+与README中文版译者[KLPY-CaiDeYiPi](https://github.com/KLPY-Shuai/)合作
 
 译者是一个咕咕怪，中文版README更新会比较慢，望谅解
 
