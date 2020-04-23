@@ -32,9 +32,9 @@
 
 :pencil:**Variable Format : Plain Text , unless clearly declared.**
 
-> :arrow_right:[DEMO](https://dplayer.mochanbw.cn/demo/) (stable)  [![DEMO on Cloudflare Workers](https://img.shields.io/badge/DEMO%20on-Cloudflare%20Workers-f38020?logo=cloudflare&logoColor=f38020&style=flat-square&cacheSeconds=36000)](https://dplayer.mochanbw.cn/demo/) [![DEMO Status](https://img.shields.io/uptimerobot/status/m784729343-649b372cd0c06203a3e597ca?label=DEMO%20status&logo=statuspage&logoColor=44CC11&style=flat-square)](https://stats.mochanbw.cn)
+> :arrow_right: [![DEMO](https://img.shields.io/badge/DEMO%20on-Cloudflare%20Workers-f38020?logo=cloudflare&logoColor=f38020&style=flat-square&cacheSeconds=36000)](https://dplayer.mochanbw.cn/) [![DEMO Status](https://img.shields.io/uptimerobot/status/m784729343-649b372cd0c06203a3e597ca?label=DEMO%20status&logo=statuspage&logoColor=44CC11&style=flat-square)](https://stats.mochanbw.cn)
 >
-> :arrow_right:[BETA](https://dplayer.mochanbw.cn/) (slow) [![BETA Status](https://img.shields.io/uptimerobot/status/m784624816-909fad502274ad089ac56ba8?label=BETA%20status&logo=statuspage&logoColor=44CC11&style=flat-square)](https://stats.mochanbw.cn)
+> :arrow_right: [![BETA](https://img.shields.io/badge/BETA%20RProxy%20by-Cf%20Workers-f38020?logo=cloudflare&logoColor=f38020&style=flat-square&cacheSeconds=36000)](https://dplayer.mochanbw.cn/) [![BETA Status](https://img.shields.io/uptimerobot/status/m784624816-909fad502274ad089ac56ba8?label=BETA%20status&logo=statuspage&logoColor=44CC11&style=flat-square)](https://stats.mochanbw.cn)
 
 |    Name    |            Default            |                                              Description                                              |
 |:----------:|:-----------------------------:|:-----------------------------------------------------------------------------------------------------:|
