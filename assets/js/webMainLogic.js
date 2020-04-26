@@ -181,7 +181,7 @@ function getTorFalse(key) { //根据url中的1或0返回布伦值,默认false
        // document.head.removeChild(oldLink);
         document.head.appendChild(link);
     }
-})();
+})();//暂无法实现此功能
 
 /*
 window.onfocus = function () { //标签页焦点更改
