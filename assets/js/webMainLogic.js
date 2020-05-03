@@ -268,8 +268,8 @@ var textHolder_en = {
     contextMenu1Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/tablets/matepad-pro/img/pc/huawei-matepad-pro-kv-pc-1@2x.jpg',
     contextMenu2Pic: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
     defaultSubUrl: 'assets/demoSubtitle_en.vtt',
-    defaultVidUrl: "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm",
-    defaultPicUrl: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
+    defaultVidUrl: "https://cdn.jsdelivr.net/gh/MoChanBW/CDN@0.3.3/doc/Dolby-Vision-Experience-Video.mp4",
+    defaultPicUrl: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@0.3.4/doc/M3_Dolby-Vision-Dramatically-Brighter-2_@2x',
 };
 
 var textHolder_zh_tw = {
@@ -302,8 +302,8 @@ var textHolder_zh_cn = {
     contextMenu1Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/tablets/matepad-pro/img/pc/huawei-matepad-pro-kv-pc-1@2x.jpg',
     contextMenu2Pic: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
     defaultSubUrl: 'assets/demoSubtitle_zh_cn.vtt',
-    defaultVidUrl: "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro/images/intro/tvc/video-e-plus.webm",
-    defaultPicUrl: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
+    defaultVidUrl: "https://cdn.jsdelivr.net/gh/MoChanBW/CDN@0.3.3/doc/Dolby-Vision-Experience-Video.mp4",
+    defaultPicUrl: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@0.3.4/doc/M3_Dolby-Vision-Dramatically-Brighter-2_@2x',
 };
 
 var gTH = getTextHolder(); //缩写
