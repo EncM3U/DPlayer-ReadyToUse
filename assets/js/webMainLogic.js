@@ -269,7 +269,7 @@ var textHolder_en = {
     contextMenu2Pic: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
     defaultSubUrl: 'assets/demoSubtitle_en.vtt',
     defaultVidUrl: "https://cdn.jsdelivr.net/gh/MoChanBW/CDN@0.3.3/doc/Dolby-Vision-Experience-Video.mp4",
-    defaultPicUrl: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@0.3.4/doc/M3_Dolby-Vision-Dramatically-Brighter-2_@2x',
+    defaultPicUrl: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@0.3.4/doc/M3_Dolby-Vision-Dramatically-Brighter-2_@2x.jpg',
 };
 
 var textHolder_zh_tw = {
@@ -303,7 +303,7 @@ var textHolder_zh_cn = {
     contextMenu2Pic: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
     defaultSubUrl: 'assets/demoSubtitle_zh_cn.vtt',
     defaultVidUrl: "https://cdn.jsdelivr.net/gh/MoChanBW/CDN@0.3.3/doc/Dolby-Vision-Experience-Video.mp4",
-    defaultPicUrl: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@0.3.4/doc/M3_Dolby-Vision-Dramatically-Brighter-2_@2x',
+    defaultPicUrl: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@0.3.4/doc/M3_Dolby-Vision-Dramatically-Brighter-2_@2x.jpg',
 };
 
 var gTH = getTextHolder(); //缩写
