@@ -285,7 +285,7 @@ var textHolder_zh_tw = {
     contextMenu1Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/tablets/matepad-pro/img/pc/huawei-matepad-pro-kv-pc-1@2x.jpg',
     contextMenu2Pic: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
     defaultSubUrl: 'assets/demoSubtitle_zh_tw.vtt',
-    defaultVidUrl: "https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/intro/tvc/video-e-cn.webm",
+    defaultVidUrl: "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro/images/intro/tvc/video-e-plus.webm",
     defaultPicUrl: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
 };
 
