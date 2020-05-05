@@ -37,12 +37,13 @@
 > :arrow_right: [![BETA](https://img.shields.io/badge/BETA%20RProxy%20by-Cf%20Workers-f38020?logo=cloudflare&logoColor=f38020&style=flat-square&cacheSeconds=36000)](https://dplayer.mochanbw.cn/beta/) [![BETA Status](https://img.shields.io/uptimerobot/status/m784624816-909fad502274ad089ac56ba8?label=BETA%20status&logo=statuspage&logoColor=44CC11&style=flat-square)](https://stats.mochanbw.cn)
 
 |    Name    |            Default            |                                              Description                                              |
-|:----------:|:-----------------------------:|:-----------------------------------------------------------------------------------------------------:|
+| :--------: | :---------------------------: | :---------------------------------------------------------------------------------------------------: |
 |  autoplay  |             false             |                                    video autoplay , values: 1 , 0                                     |
 |  danmaku   |        Wait for update        |                                                                                                       |
 |  favicon   |    'assets/Cloud_Play.svg'    |                                              favicon url                                              |
 |    lang    |      navigator.language       |                         player instance language , values: zh-cn , zh-tw , en                         |
 |    live    |             false             |          live mode , values: 1 , 0. Also see [#live](https://dplayer.js.org/guide.html#live)          |
+|    loop    |             false             |                              video loop , values: 1 , 0(wait for update)                              |
 |   magurl   |               -               |                                   see [#Magnet Link](#magnet-link)                                    |
 |   picurl   |   [default picurl][picurl]    |                                          url of video poster                                          |
 | playerlogo | 'assets/Cloud_Play_128px.png' |                             url of logo in the top left corner in dplayer                             |
