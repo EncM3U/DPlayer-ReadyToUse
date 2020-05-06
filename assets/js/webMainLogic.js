@@ -44,18 +44,6 @@ function getVariable(variable) //返回变量字符串
         {
             var defaultPicUrl = gTH.defaultPicUrl;
             return defaultPicUrl;
-        } else if (variable == "autoplay") //自动播放相关 
-        {
-            return (false);
-        } else if (variable == "live") //直播相关
-        {
-            return (false);
-        } else if (variable == "screenshot") //截图相关
-        {
-            return (false);
-        }else if (variable == "loop") //循环播放相关
-        {
-            return (false);
         } else if (variable == "playerlogo" && getDefault()) //播放器左上角logo相关
         {
             var defaultPlayerLogo = "assets/Cloud_Play_128px.png";
@@ -69,10 +57,10 @@ function getVariable(variable) //返回变量字符串
                 let videourl = getVariable('vidurl');
                 let SubUrl = videourl.replace('.mp4', '.vtt');
                 videourl = null;
-                SubUrl = videourl.replace('.m3u8', '.vtt');
-                SubUrl = videourl.replace('.mpd', '.vtt');
-                SubUrl = videourl.replace('.flv', '.vtt');
-                SubUrl = videourl.replace('.webm', '.vtt');
+                SubUrl = SubUrl.replace('.m3u8', '.vtt');
+                SubUrl = SubUrl.replace('.mpd', '.vtt');
+                SubUrl = SubUrl.replace('.flv', '.vtt');
+                SubUrl = SubUrl.replace('.webm', '.vtt');
                 return SubUrl; //默认字幕
             }
         } else if (variable == "webtitle") //页面title相关
