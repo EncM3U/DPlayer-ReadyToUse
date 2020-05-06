@@ -54,10 +54,22 @@ function getVariable(variable) //返回变量字符串
         {
             var defaultPlayerLogo = "assets/Cloud_Play_128px.png";
             return defaultPlayerLogo;
-        } else if (variable == "suburl" && getDefault()) //字幕相关,可用cdn加速
+        } else if (variable == "suburl") 
         {
-            var defaultSubUrl = gTH.defaultSubUrl; // Internationalization
-            return defaultSubUrl;
+            if (variable == "suburl" && getDefault()) //demo字幕相关,可用cdn加速
+            {
+                var defaultSubUrl = gTH.defaultSubUrl; // Internationalization
+                return defaultSubUrl;
+            }else{
+                let videourl=getVariable('vidurl');
+                let SubUrl= videourl.replace('.mp4','.vtt'); 
+                videourl=null;
+                SubUrl= videourl.replace('.m3u8','.vtt'); 
+                SubUrl= videourl.replace('.mpd','.vtt'); 
+                SubUrl= videourl.replace('.flv','.vtt'); 
+                SubUrl= videourl.replace('.webm','.vtt'); 
+                return SubUrl;//默认字幕
+            } 
         } else if (variable == "webtitle") //页面title相关
         {
             var defaultWebTitle = 'DPlayer-ReadyToUse';
