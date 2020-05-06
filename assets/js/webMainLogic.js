@@ -50,26 +50,31 @@ function getVariable(variable) //返回变量字符串
         } else if (variable == "live") //直播相关
         {
             return (false);
+        } else if (variable == "screenshot") //截图相关
+        {
+            return (false);
+        }else if (variable == "loop") //循环播放相关
+        {
+            return (false);
         } else if (variable == "playerlogo" && getDefault()) //播放器左上角logo相关
         {
             var defaultPlayerLogo = "assets/Cloud_Play_128px.png";
             return defaultPlayerLogo;
-        } else if (variable == "suburl") 
-        {
+        } else if (variable == "suburl") {
             if (variable == "suburl" && getDefault()) //demo字幕相关,可用cdn加速
             {
                 var defaultSubUrl = gTH.defaultSubUrl; // Internationalization
                 return defaultSubUrl;
-            }else{
-                let videourl=getVariable('vidurl');
-                let SubUrl= videourl.replace('.mp4','.vtt'); 
-                videourl=null;
-                SubUrl= videourl.replace('.m3u8','.vtt'); 
-                SubUrl= videourl.replace('.mpd','.vtt'); 
-                SubUrl= videourl.replace('.flv','.vtt'); 
-                SubUrl= videourl.replace('.webm','.vtt'); 
-                return SubUrl;//默认字幕
-            } 
+            } else {
+                let videourl = getVariable('vidurl');
+                let SubUrl = videourl.replace('.mp4', '.vtt');
+                videourl = null;
+                SubUrl = videourl.replace('.m3u8', '.vtt');
+                SubUrl = videourl.replace('.mpd', '.vtt');
+                SubUrl = videourl.replace('.flv', '.vtt');
+                SubUrl = videourl.replace('.webm', '.vtt');
+                return SubUrl; //默认字幕
+            }
         } else if (variable == "webtitle") //页面title相关
         {
             var defaultWebTitle = 'DPlayer-ReadyToUse';
@@ -162,7 +167,7 @@ function getContextMenu() //返回右键的自定义功能目录（数组）
 }
 
 function getTrueorF(key) { //根据url中的1或0返回布伦值,默认true
-    if (getVariable(key) == "1") {
+    if (getQueryVariable(key) == "1") {
         return (true);
     } else {
         return (false);
@@ -170,7 +175,7 @@ function getTrueorF(key) { //根据url中的1或0返回布伦值,默认true
 }
 
 function getTorFalse(key) { //根据url中的1或0返回布伦值,默认false
-    if (getVariable(key) == "0") {
+    if (getQueryVariable(key) == "0") {
         return (false);
     } else {
         return (true);
@@ -190,10 +195,10 @@ function getTorFalse(key) { //根据url中的1或0返回布伦值,默认false
     link.rel = 'icon';
     link.href = getVariable("favicon");
     if (getVariable("favicon")) { //如果favicon未指定且oldlink存在
-       // document.head.removeChild(oldLink);
+        // document.head.removeChild(oldLink);
         document.head.appendChild(link);
     }
-})();//暂无法实现此功能
+})(); //暂无法实现此功能
 
 /*
 window.onfocus = function () { //标签页焦点更改
