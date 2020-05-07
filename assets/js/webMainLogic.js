@@ -298,7 +298,6 @@ var DanMaku = {
 
 function getDanMaku() {
     if (getDefault()) {
-        console.log(DanMaku);
         return DanMaku;
     } else if (getQueryVariable("bvid") || getQueryVariable("aid")) {
         return DanMaku;
