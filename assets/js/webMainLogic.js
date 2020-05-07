@@ -120,8 +120,8 @@ function getContextMenu() //返回右键的自定义功能目录（数组）
                 }, {
                     //id: 'test',
                     //api: 'https://api.prprpr.me/dplayer/',
-                    //maximum: 3000,
-                    //user: 'DIYgod',
+                    maximum: 1000,
+                    user: 'DPlayer-ReadyToUse',
                 });
             },
 
@@ -147,6 +147,24 @@ function getContextMenu() //返回右键的自定义功能目录（数组）
             text: gTH.Manual,
             link: "https://github.com/MoChanBW/DPlayer-ReadyToUse/",
         };
+        var maxIndex = contextMenu.length - 1;
+        var length = contextMenu.length;
+        var k = 0;
+        while (k < length) {
+            if (contextMenu[k] != null && contextMenu[k].text == undefined) {
+                var count = k;
+                while (count < maxIndex) {
+                    contextMenu[count] = contextMenu[count + 1]; //后面的传递上来
+                    count++;
+                }
+                contextMenu.pop(); //删除数组的最后一个元素
+            } else {
+                k++;
+            }
+        }
+        maxIndex = null,
+            length = null,
+            k = null;
         return contextMenu;
     } else //返回一个空数组
     {
@@ -260,22 +278,30 @@ function getTextHolder() {
     }
 }
 //弹幕
-var aid = getVariable("aid");
-var bilipart = getVariable("bilipart");
-var danmu = {
-    id: 'SDAUIC45DASFA',
+if (getDefault()) {
+    var aid = "?aid=882531009";
+} else {
+    var aid = getVariable("aid") ? '?aid=' + getVariable("aid") : null;
+    var bvid = getVariable("bvid") ? '&bvid=' + getVariable("bvid") : null;
+    var part = getQueryVariable("part") ? '&p=' + getQueryVariable("part") : "&p=1";
+}
+var DanMaku = {
+    id: 'HUAWEINBBYDNB',
     api: 'https://danmu.u2sb.top/api/danmu/dplayer',
-    token: 'AKSEHDCFADKJOA5498AS',
+    token: 'HUAWEINBBYDNB',
     maximum: 1000,
-    addition: ['https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?aid=' + aid + '&p=1' ],
-    user: 'DPlayer',
+    addition: ['https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/' + aid], //+bvid+part],
+    user: 'DPlayer-ReadyToUse',
     bottom: '15%',
     unlimited: true,
 };
 
-function getDanmu() {
-    if (getQueryVariable("bvid")) {
-        return danmu;
+function getDanMaku() {
+    if (getDefault()) {
+        console.log(DanMaku);
+        return DanMaku;
+    } else if (getQueryVariable("bvid") || getQueryVariable("aid")) {
+        return DanMaku;
     } else {
         return null;
     }
@@ -285,51 +311,52 @@ var textHolder_en = {
     Manual: "Manual",
     contextMenuSwitchText: "Switch to : ",
     contextMenu0text: "HUAWEI Vision X65",
-    contextMenu1text: "HUAWEI MatePad Pro",
-    contextMenu2text: "HUAWEI P40 Pro+",
+    //contextMenu1text: "HUAWEI MatePad Pro",
+    //contextMenu2text: "HUAWEI P40 Pro+",
     contextMenu0Url: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/media/tvc.mp4',
-    contextMenu1Url: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/tablets/matepad-pro/img/video/huawei-matepad-pro-all-video.mp4',
-    contextMenu2Url: "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm",
+    //contextMenu1Url: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/tablets/matepad-pro/img/video/huawei-matepad-pro-all-video.mp4',
+    //contextMenu2Url: "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm",
     contextMenu0Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/img/pc/huawei-vision-x65.jpg',
-    contextMenu1Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/tablets/matepad-pro/img/pc/huawei-matepad-pro-kv-pc-1@2x.jpg',
-    contextMenu2Pic: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
+    //contextMenu1Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/tablets/matepad-pro/img/pc/huawei-matepad-pro-kv-pc-1@2x.jpg',
+    //contextMenu2Pic: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
+    defaultVidUrl: "https://cdn.jsdelivr.net/gh/MoChanBW/CDN@1.0.0/huawei-p40pro/index.m3u8",
+    defaultPicUrl: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@1.0.1/huawei-p40pro/index.jpg',
     defaultSubUrl: 'assets/demoSubtitle_en.vtt',
-    defaultVidUrl: "https://cdn.jsdelivr.net/gh/MoChanBW/CDN@0.3.3/doc/Dolby-Vision-Experience-Video.mp4",
-    defaultPicUrl: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@0.3.4/doc/M3_Dolby-Vision-Dramatically-Brighter-2_@2x.jpg',
 };
 
 var textHolder_zh_tw = {
     Manual: "使用說明",
     contextMenuSwitchText: "切換到 : ",
     contextMenu0text: "華為智慧屏 X65",
-    contextMenu1text: "華為 MatePad Pro",
-    contextMenu2text: "華為 P40 Pro+",
+    //contextMenu1text: "華為 MatePad Pro",
+    //contextMenu2text: "華為 P40 Pro+",
     contextMenu0Url: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/media/tvc.mp4',
-    contextMenu1Url: "https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/tablets/matepad-pro/img/video/huawei-matepad-pro-all-video.mp4",
-    contextMenu2Url: "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm",
+    //contextMenu1Url: "https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/tablets/matepad-pro/img/video/huawei-matepad-pro-all-video.mp4",
+    //contextMenu2Url: "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm",
     contextMenu0Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/img/pc/huawei-vision-x65.jpg',
-    contextMenu1Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/tablets/matepad-pro/img/pc/huawei-matepad-pro-kv-pc-1@2x.jpg',
-    contextMenu2Pic: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
+    //contextMenu1Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/tablets/matepad-pro/img/pc/huawei-matepad-pro-kv-pc-1@2x.jpg',
+    //contextMenu2Pic: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
+    defaultVidUrl: "https://cdn.jsdelivr.net/gh/MoChanBW/CDN@1.0.0/huawei-p40pro/index.m3u8",
+    defaultPicUrl: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@1.0.1/huawei-p40pro/index.jpg',
     defaultSubUrl: 'assets/demoSubtitle_zh_tw.vtt',
-    defaultVidUrl: "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro/images/intro/tvc/video-e-plus.webm",
-    defaultPicUrl: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
 };
 
 var textHolder_zh_cn = {
     Manual: "使用说明",
     contextMenuSwitchText: "切换到 : ",
     contextMenu0text: "华为智慧屏 X65",
-    contextMenu1text: "华为 MatePad Pro",
-    contextMenu2text: "华为 P40 Pro+",
+    //contextMenu1text: "华为 MatePad Pro",
+    //contextMenu2text: "华为 P40 Pro+",
     contextMenu0Url: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/media/tvc.mp4',
-    contextMenu1Url: "https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/tablets/matepad-pro/img/video/huawei-matepad-pro-all-video.mp4",
-    contextMenu2Url: "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm",
+    //contextMenu1Url: "https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/tablets/matepad-pro/img/video/huawei-matepad-pro-all-video.mp4",
+    //contextMenu2Url: "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm",
     contextMenu0Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/img/pc/huawei-vision-x65.jpg',
-    contextMenu1Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/tablets/matepad-pro/img/pc/huawei-matepad-pro-kv-pc-1@2x.jpg',
-    contextMenu2Pic: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
+    //contextMenu1Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/tablets/matepad-pro/img/pc/huawei-matepad-pro-kv-pc-1@2x.jpg',
+    //contextMenu2Pic: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
+    defaultVidUrl: "https://cdn.jsdelivr.net/gh/MoChanBW/CDN@1.0.0/huawei-p40pro/index.m3u8",
+    defaultPicUrl: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@1.0.1/huawei-p40pro/index.jpg',
     defaultSubUrl: 'assets/demoSubtitle_zh_cn.vtt',
-    defaultVidUrl: "https://cdn.jsdelivr.net/gh/MoChanBW/CDN@0.3.3/doc/Dolby-Vision-Experience-Video.mp4",
-    defaultPicUrl: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@0.3.4/doc/M3_Dolby-Vision-Dramatically-Brighter-2_@2x.jpg',
 };
 
 var gTH = getTextHolder(); //缩写
+console.log("MoChanBW/DPlayer-ReadyToUse")

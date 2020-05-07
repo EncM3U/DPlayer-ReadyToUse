@@ -24,7 +24,7 @@ const dp = new DPlayer({ //DPlayer主控制函数,详见 http://dplayer.js.org
         bottom: '10%',
         color: '#b7daff',
     },
-    danmaku: getDanmu(),
+    danmaku: getDanMaku(),//弹幕，在写了在写了（新建文件夹）
     contextmenu: getContextMenu(), //默认contextMenu,自定义功能稍后添加
     //highlight: [
     //    {
