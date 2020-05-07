@@ -286,9 +286,9 @@ if (getDefault()) {
     var part = getQueryVariable("part") ? '&p=' + getQueryVariable("part") : "&p=1";
 }
 var DanMaku = {
-    id: 'HUAWEINBBYDNB',
+    id: 'HUAWEITECHNB',
     api: 'https://danmu.u2sb.top/api/danmu/dplayer',
-    token: 'HUAWEINBBYDNB',
+    token: 'HUAWEITECHNB',
     maximum: 1000,
     addition: ['https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/' + aid], //+bvid+part],
     user: 'DPlayer-ReadyToUse',
