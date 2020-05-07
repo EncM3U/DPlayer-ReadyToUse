@@ -279,27 +279,25 @@ function getTextHolder() {
 }
 //弹幕
 if (getDefault()) {
-    var aid = "?aid=882531009";
+    var abid = "aid=882531009";
 } else {
-    var aid = getVariable("aid") ? '?aid=' + getVariable("aid") : null;
-    var bvid = getVariable("bvid") ? '&bvid=' + getVariable("bvid") : null;
-    var part = getQueryVariable("part") ? '&p=' + getQueryVariable("part") : "&p=1";
+    var abid = getQueryVariable("aid") ? 'aid=' + getQueryVariable("aid") : null;
+    var abid = getQueryVariable("bvid") ? 'bvid=' + getQueryVariable("bvid") : null;
+    var part = getQueryVariable("part") ? '&p=' + getQueryVariable("part") : null;
 }
 var DanMaku = {
     id: 'HUAWEITECHNB',
-    api: 'https://danmu.u2sb.top/api/danmu/dplayer',
+    api: 'https://danmu.u2sb.top/api/danmu/dplayer/',
     token: 'HUAWEITECHNB',
     maximum: 1000,
-    addition: ['https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/' + aid], //+bvid+part],
+    addition: ['https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?' + abid + part],
     user: 'DPlayer-ReadyToUse',
     bottom: '15%',
     unlimited: true,
 };
 
 function getDanMaku() {
-    if (getDefault()) {
-        return DanMaku;
-    } else if (getQueryVariable("bvid") || getQueryVariable("aid")) {
+    if (getDefault() || getQueryVariable("bvid") || getQueryVariable("aid")) {
         return DanMaku;
     } else {
         return null;
