@@ -281,7 +281,7 @@ function getTextHolder() {
 if (getDefault()) {
     var abid = "aid=882531009";
 } else {
-    var abid = getQueryVariable("aid") ? 'aid=' + getQueryVariable("aid") : null;
+    var aid = getQueryVariable("aid") ? 'aid=' + getQueryVariable("aid") : null;
     var abid = getQueryVariable("bvid") ? 'bvid=' + getQueryVariable("bvid") : null;
     var part = getQueryVariable("part") ? '&p=' + getQueryVariable("part") : null;
 }
@@ -290,7 +290,7 @@ var DanMaku = {
     api: 'https://danmu.u2sb.top/api/danmu/dplayer/',
     token: 'HUAWEITECHNB',
     maximum: 1000,
-    addition: ['https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?' + abid + part],
+    addition: ['https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?' + aid ],//+ part],
     user: 'DPlayer-ReadyToUse',
     bottom: '15%',
     unlimited: true,
