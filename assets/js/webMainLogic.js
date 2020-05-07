@@ -260,14 +260,14 @@ function getTextHolder() {
     }
 }
 //弹幕
-var bvid = getVariable("bvid");
+var aid = getVariable("aid");
 var bilipart = getVariable("bilipart");
 var danmu = {
     id: 'SDAUIC45DASFA',
     api: 'https://danmu.u2sb.top/api/danmu/dplayer',
     token: 'AKSEHDCFADKJOA5498AS',
     maximum: 1000,
-    addition: ['https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?bvid=' + bvid + '&p=' + bilipart],
+    addition: ['https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?aid=' + aid + '&p=1' ],
     user: 'DPlayer',
     bottom: '15%',
     unlimited: true,
