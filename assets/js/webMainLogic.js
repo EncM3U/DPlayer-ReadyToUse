@@ -260,18 +260,27 @@ function getTextHolder() {
     }
 }
 //弹幕
-var bvid=170001;
-var part=1;
+var bvid = getVariable("bvid");
+var bilipart = getVariable("bilipart");
 var danmu = {
-    //id: '9E2E3368B56CDBB4',
-    //api: 'https://api.prprpr.me/dplayer/',
-    //token: 'tokendemo',
+    id: 'SDAUIC45DASFA',
+    api: 'https://danmu.u2sb.top/api/danmu/dplayer',
+    token: 'AKSEHDCFADKJOA5498AS',
     maximum: 1000,
-    addition: ['https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?aid='+bvid+'&p='+part],
-    //user: 'DIYgod',
+    addition: ['https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?bvid=' + bvid + '&p=' + bilipart],
+    user: 'DPlayer',
     bottom: '15%',
     unlimited: true,
 };
+
+function getDanmu() {
+    if (getQueryVariable("bvid")) {
+        return danmu;
+    } else {
+        return null;
+    }
+}
+
 var textHolder_en = {
     Manual: "Manual",
     contextMenuSwitchText: "Switch to : ",
