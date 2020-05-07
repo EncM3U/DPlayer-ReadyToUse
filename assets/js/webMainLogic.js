@@ -259,7 +259,19 @@ function getTextHolder() {
         return textHolder_en;
     }
 }
-
+//弹幕
+var bvid=170001;
+var part=1;
+var danmu = {
+    //id: '9E2E3368B56CDBB4',
+    //api: 'https://api.prprpr.me/dplayer/',
+    //token: 'tokendemo',
+    maximum: 1000,
+    addition: ['https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?aid='+bvid+'&p='+part],
+    //user: 'DIYgod',
+    bottom: '15%',
+    unlimited: true,
+};
 var textHolder_en = {
     Manual: "Manual",
     contextMenuSwitchText: "Switch to : ",

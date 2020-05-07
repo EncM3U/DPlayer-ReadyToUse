@@ -24,16 +24,7 @@ const dp = new DPlayer({ //DPlayer主控制函数,详见 http://dplayer.js.org
         bottom: '10%',
         color: '#b7daff',
     },
-    //danmaku: {
-    // id: '9E2E3368B56CDBB4',
-    // api: 'https://api.prprpr.me/dplayer/',
-    // token: 'tokendemo',
-    //  maximum: 1000,
-    //  addition: ['https://api.prprpr.me/dplayer/v3/bilibili?aid=4157142'],
-    //  user: 'DIYgod',
-    // bottom: '15%',
-    // unlimited: true,
-    //},
+    danmaku: danmu,
     contextmenu: getContextMenu(), //默认contextMenu,自定义功能稍后添加
     //highlight: [
     //    {
