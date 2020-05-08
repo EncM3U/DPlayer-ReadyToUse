@@ -291,7 +291,7 @@ function getDanMaku() { //弹幕
     if (noDanMakuProvided()) { //如果url中未提供弹幕，返回默认弹幕
         if (getVariable("urlofvid").includes("huawei-p40pro/index")) {
             var abid = "aid=882531009";
-            var part = '';
+            var part = '&p=2';
         } else if (getVariable("urlofvid").includes("YOSLMIZ/index")) {
             var abid = "bvid=BV16s411U7co";
             var part = '';
