@@ -278,30 +278,43 @@ function getTextHolder() {
         return textHolder_en;
     }
 }
-//弹幕
-if (getDefault()) {
-    var abid = "aid=882531009";
-    var part = '';
-} else {
-    var abid = getQueryVariable("aid") ? 'aid=' + getQueryVariable("aid") : '';
-    var abid = getQueryVariable("bvid") ? 'bvid=' + getQueryVariable("bvid") : '';
-    var part = getQueryVariable("part") ? '&p=' + getQueryVariable("part") : '';
+
+function noDanMakuProvided() {
+    if (getQueryVariable("bvid") || getQueryVariable("aid")) {
+        return false;
+    } else {
+        return true;
+    }
 }
 
-var DanMaku = {
-    id: '',
-    api: 'https://danmu.u2sb.top/api/danmu/dplayer/',
-    token: 'HUAWEITECHNB',
-    maximum: 1000,
-    addition: ['https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?' + abid + part],
-    user: 'DPlayer-ReadyToUse',
-    bottom: '15%',
-    unlimited: true,
-};
+function getDanMaku() { //弹幕  
+    if (noDanMakuProvided()) { //如果url中未提供弹幕，返回默认弹幕
+        if (getVariable("urlofvid").includes("huawei-p40pro/index")) {
+            var abid = "aid=882531009";
+            var part = '';
+        } else if (getVariable("urlofvid").includes("YOSLMIZ/index")) {
+            var abid = "bvid=BV16s411U7co";
+            var part = '';
+        }else if (getVariable("urlofvid").includes("Nexus2019")) {
+            var abid = "bvid=BV1rz411z7uM";
+            var part = '';
+        }
+    } else {
+        var abid = getQueryVariable("aid") ? 'aid=' + getQueryVariable("aid") : '';
+        var abid = getQueryVariable("bvid") ? 'bvid=' + getQueryVariable("bvid") : abid;
+        var part = getQueryVariable("part") ? '&p=' + getQueryVariable("part") : '';
+    }
 
-
-
-function getDanMaku() {
+    var DanMaku = {
+        id: '',
+        api: 'https://danmu.u2sb.top/api/danmu/dplayer/',
+        token: 'HUAWEITECHNB',
+        maximum: 1000,
+        addition: ['https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?' + abid + part],
+        user: 'DPlayer-ReadyToUse',
+        bottom: '15%',
+        unlimited: true,
+    };
     if (getDefault() || getQueryVariable("bvid") || getQueryVariable("aid")) {
         var danMakuID = md5Encrypt(getVariable("urlofvid")).toUpperCase();
         DanMaku.id = danMakuID;
@@ -309,7 +322,9 @@ function getDanMaku() {
     } else {
         return null;
     }
+
 }
+
 
 function md5Encrypt(string) { //from https://mp.weixin.qq.com/s?src=11&timestamp=1588897977&ver=2325&signature=GBu3lAb0gmCyBQaLMSmGLqr3iV4c3-swAuHCMeVeDwl8NGbZZ8vo3J7KOV6rRpWPP7Pe6PIFWy7rabKf5ciHAyaRns36jfgKR9SxsUX9aAvC7Jr-19Fn1RF0xVJDjxDD&new=1
     function md5_RotateLeft(lValue, iShiftBits) {
