@@ -85,7 +85,7 @@ DEMO webtorrent Video: **[Sintel](https://dplayer.mochanbw.cn/demo/?magurl=bWFnb
 
 ### Danmaku Settings
 
-> No time to write this cause Fxxxing school suddenly shift the School day to an earlier date.
+> No time to write this cause Fxxxing school suddenly bring the School day to an earlier date.
 	
 > Wait for update
 
