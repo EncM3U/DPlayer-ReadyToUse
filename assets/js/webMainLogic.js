@@ -173,7 +173,7 @@ function getContextMenu() //返回右键的自定义功能目录（数组）
 }
 
 function getTrueorF(key) { //根据url中的1或0返回布伦值,默认true
-    if (getQueryVariable(key) == "1") {
+    if (getQueryVariable(key) == "1" || getQueryVariable(key) == false) {
         return (true);
     } else {
         return (false);
@@ -181,7 +181,7 @@ function getTrueorF(key) { //根据url中的1或0返回布伦值,默认true
 }
 
 function getTorFalse(key) { //根据url中的1或0返回布伦值,默认false
-    if (getQueryVariable(key) == "0") {
+    if (getQueryVariable(key) == "0" || getQueryVariable(key) == false) {
         return (false);
     } else {
         return (true);
@@ -287,7 +287,22 @@ function noDanMakuProvided() {
     }
 }
 
+
+
 function getDanMaku() { //弹幕  
+
+
+    function DanmakuON() {
+        if (getTrueorF("danmaku")) {
+            return true;
+        } else if (getDefault() || getQueryVariable("bvid") || getQueryVariable("aid")) {
+            if (getQueryVariable("danmaku") != "0") {
+                return true;
+            }
+        } else {
+            return false;
+        }
+    }
     if (noDanMakuProvided()) { //如果url中未提供弹幕，返回默认弹幕
         if (getVariable("urlofvid").includes("huawei-p40pro/index")) {
             var abid = "aid=882531009";
@@ -295,7 +310,7 @@ function getDanMaku() { //弹幕
         } else if (getVariable("urlofvid").includes("YOSLMIZ/index")) {
             var abid = "bvid=BV16s411U7co";
             var part = '';
-        }else if (getVariable("urlofvid").includes("Nexus2019")) {
+        } else if (getVariable("urlofvid").includes("Nexus2019")) {
             var abid = "bvid=BV1rz411z7uM";
             var part = '';
         }
@@ -304,27 +319,35 @@ function getDanMaku() { //弹幕
         var abid = getQueryVariable("bvid") ? 'bvid=' + getQueryVariable("bvid") : abid;
         var part = getQueryVariable("part") ? '&p=' + getQueryVariable("part") : '';
     }
-
     var DanMaku = {
         id: '',
         api: 'https://danmu.u2sb.top/api/danmu/dplayer/',
-        token: 'HUAWEITECHNB',
+        token: '',
         maximum: 1000,
         addition: ['https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?' + abid + part],
         user: 'DPlayer-ReadyToUse',
         bottom: '15%',
         unlimited: true,
     };
-    if (getDefault() || getQueryVariable("bvid") || getQueryVariable("aid")) {
-        var danMakuID = md5Encrypt(getVariable("urlofvid")).toUpperCase();
-        DanMaku.id = danMakuID;
-        return DanMaku;
+    if (DanmakuON()) {
+        var httpRequest = new XMLHttpRequest();
+        httpRequest.open('GET', 'https://dpdanmakuapi.bryanw.workers.dev', true);
+        httpRequest.send();
+        httpRequest.onreadystatechange = function () {
+            if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status == 200) {
+                var json = httpRequest.responseText; 
+                json = JSON.parse(json);
+                DanMaku.token = json.VerificationCode;
+                DanMaku.user = "DPRTU" + json.VerificationCode.substring(0, 16);
+            }
+            DanMaku.id = md5Encrypt(getVariable("urlofvid")).toUpperCase();
+        };
+            return DanMaku;
+        
     } else {
         return null;
     }
-
 }
-
 
 function md5Encrypt(string) { //from https://mp.weixin.qq.com/s?src=11&timestamp=1588897977&ver=2325&signature=GBu3lAb0gmCyBQaLMSmGLqr3iV4c3-swAuHCMeVeDwl8NGbZZ8vo3J7KOV6rRpWPP7Pe6PIFWy7rabKf5ciHAyaRns36jfgKR9SxsUX9aAvC7Jr-19Fn1RF0xVJDjxDD&new=1
     function md5_RotateLeft(lValue, iShiftBits) {
