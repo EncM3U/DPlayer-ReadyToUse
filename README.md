@@ -59,7 +59,7 @@
 
 `/?{Name1}={Value1}&{Name2}={Value2}`
 
-DPlayer-RTU Easy-Gen : [here](https://dplayer.mochanbw.cn/generator/)(Unavailable)
+DPlayer-RTU Easy-Gen : [here](https://dplayer.mochanbw.cn/generator/)(Beta Now)
 
 Like this: [https://dplayer.mochanbw.cn/demo/?vidurl=https://t.cn/A6w5s7xn&autoplay=1][Likethis]
 
@@ -85,7 +85,7 @@ DEMO webtorrent Video: **[Sintel](https://dplayer.mochanbw.cn/demo/?magurl=bWFnb
 
 **DPlayer-ReadyToUse** © [MoChanBW](https://github.com/MoChanBW/). Released under the [MIT License](./LICENSE).
 
-Cooprate with [KLPY-ARealNoob](https://github.com/KLPY-shuai/)
+Cooprate with [KLPY-ReallyHadsome](https://github.com/KLPY-shuai/)
 
 [picurl]:https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/design/design-intro-e-plus.jpg
 [videourl]:https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm
