@@ -290,14 +290,12 @@ function noDanMakuProvided() {
 
 
 function getDanMaku() { //弹幕  
-
-
     function DanmakuON() {
-        if (getTrueorF("danmaku")) {
-            return true;
-        } else if (getDefault() || getQueryVariable("bvid") || getQueryVariable("aid")) {
-            if (getQueryVariable("danmaku") != "0") {
+        if (getDefault() || getQueryVariable("bvid") || getQueryVariable("aid")) {
+            if (getTrueorF("danmaku")) {
                 return true;
+            } else {
+                return false;
             }
         } else {
             return false;
@@ -335,15 +333,16 @@ function getDanMaku() { //弹幕
         httpRequest.send();
         httpRequest.onreadystatechange = function () {
             if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status == 200) {
-                var json = httpRequest.responseText; 
+                var json = httpRequest.responseText;
                 json = JSON.parse(json);
-                DanMaku.token = json.VerificationCode;
-                DanMaku.user = "DPRTU" + json.VerificationCode.substring(0, 16);
+                DanMaku.token = json.VerificationCode;//方便以后搭弹幕服务器时用于校验身份
+                DanMaku.user = "DPRTU" + json.VerificationCode.substring(0, 11);
             }
-            DanMaku.id = md5Encrypt(getVariable("urlofvid")).toUpperCase();
+            DanMaku.id = md5Encrypt(getVariable("urlofvid")).toUpperCase();//视频的唯一id
         };
-            return DanMaku;
-        
+        console.log(DanMaku);
+        return DanMaku;
+
     } else {
         return null;
     }
