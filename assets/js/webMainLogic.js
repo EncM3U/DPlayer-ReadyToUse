@@ -49,12 +49,12 @@ function getVariable(variable) //返回变量字符串
             var defaultPlayerLogo = "assets/Cloud_Play_128px.png";
             return defaultPlayerLogo;
         } else if (variable == "suburl") {
-            if (variable == "suburl" && getDefault()) //demo字幕相关,可用cdn加速
+            if (variable == "suburl" && getDefault() ) //demo字幕相关,可用cdn加速
             {
                 var defaultSubUrl = gTH.defaultSubUrl; // Internationalization
                 return defaultSubUrl;
-            } else if (getVariable('vidurl')) {
-                let videourl = getVariable('vidurl');
+            } else {
+                let videourl = getVariable('vidurl') ? getVariable('vidurl') : getVariable('urlofvid') ;
                 let SubUrl = videourl.replace('.mp4', '.vtt');
                 videourl = null;
                 SubUrl = SubUrl.replace('.m3u8', '.vtt');
@@ -74,7 +74,7 @@ function getVariable(variable) //返回变量字符串
         {
             return "auto";
         } else {
-            return null;
+            return false;
         }
     }
 }
@@ -335,10 +335,10 @@ function getDanMaku() { //弹幕
             if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status == 200) {
                 var json = httpRequest.responseText;
                 json = JSON.parse(json);
-                DanMaku.token = json.VerificationCode; //方便以后搭弹幕服务器时用于校验身份
+                DanMaku.token = json.VerificationCode;//方便以后搭弹幕服务器时用于校验身份
                 DanMaku.user = "DPRTU" + json.VerificationCode.substring(0, 11);
             }
-            DanMaku.id = md5Encrypt(getVariable("urlofvid")).toUpperCase(); //视频的唯一id
+            DanMaku.id = md5Encrypt(getVariable("urlofvid")).toUpperCase();//视频的唯一id
         };
         console.log(DanMaku);
         return DanMaku;
