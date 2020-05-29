@@ -53,7 +53,7 @@ function getVariable(variable) //返回变量字符串
             {
                 var defaultSubUrl = gTH.defaultSubUrl; // Internationalization
                 return defaultSubUrl;
-            } else {
+            } else if (getVariable('vidurl')) {
                 let videourl = getVariable('vidurl');
                 let SubUrl = videourl.replace('.mp4', '.vtt');
                 videourl = null;
@@ -335,10 +335,10 @@ function getDanMaku() { //弹幕
             if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status == 200) {
                 var json = httpRequest.responseText;
                 json = JSON.parse(json);
-                DanMaku.token = json.VerificationCode;//方便以后搭弹幕服务器时用于校验身份
+                DanMaku.token = json.VerificationCode; //方便以后搭弹幕服务器时用于校验身份
                 DanMaku.user = "DPRTU" + json.VerificationCode.substring(0, 11);
             }
-            DanMaku.id = md5Encrypt(getVariable("urlofvid")).toUpperCase();//视频的唯一id
+            DanMaku.id = md5Encrypt(getVariable("urlofvid")).toUpperCase(); //视频的唯一id
         };
         console.log(DanMaku);
         return DanMaku;
