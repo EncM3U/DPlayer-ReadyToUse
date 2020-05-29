@@ -1,7 +1,7 @@
 <b>English | [中文](./README_zh.md)</b>
 
 <p align="center">
-<img src="https://cdn.jsdelivr.net/gh/MoChanBW/DPlayer-ReadyToUse@0.0.4/assets/Cloud_Play_128px.png" alt="Cloud-Play-icon" width="100" >
+<img src="https://cdn.jsdelivr.net/gh/MoChanBW/DPlayer-ReadyToUse@latest/assets/Cloud_Play_128px.png" alt="Cloud-Play-icon" width="100" >
 </p>
 <h1 align="center">DPlayer-ReadyToUse</h1>
 
@@ -85,7 +85,7 @@ DEMO webtorrent Video: **[Sintel](https://dplayer.mochanbw.cn/demo/?magurl=bWFnb
 
 ### Danmaku Settings
 
-> No time to write this cause Fxxxing school suddenly brought the School day to an earlier date.
+>
 	
 > Wait for update
 
