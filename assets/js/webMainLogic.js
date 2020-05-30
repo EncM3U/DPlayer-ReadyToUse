@@ -10,6 +10,10 @@ function getQueryVariable(variable) { //获取参数(function from https://www.r
     return (false);
 }
 
+function spiltQualites(pair) {
+
+}
+
 function getVariable(variable) //返回变量字符串
 {
     if (getQueryVariable(variable) && variable != "urlofvid") //检查url中变量是否存在，存在即返回值，否则执行else
@@ -49,7 +53,7 @@ function getVariable(variable) //返回变量字符串
             var defaultPlayerLogo = "assets/Cloud_Play_128px.png";
             return defaultPlayerLogo;
         } else if (variable == "suburl") {
-            if (variable == "suburl" && getDefault()) //demo字幕相关,可用cdn加速
+            if (getDefault()) //demo字幕相关,可用cdn加速
             {
                 var defaultSubUrl = gTH.defaultSubUrl; // Internationalization
                 return defaultSubUrl;
@@ -219,8 +223,10 @@ window.onblur = function () {
     document.title = '快回来~页面崩溃了';
 };
 */
-function getVideoQualitySelect() {//清晰度切换
-    var vidDefault = {//默认返回
+function getVideoQualitySelect() { //清晰度切换
+    var videoQualitySelectTextHolder = getQueryVariable("vidqs");
+
+    var vidDefault = { //默认返回
         url: getVariable("urlofvid"), //视频链接
         pic: getVariable("picurl"),
         thumbnails: getVariable("thumburl"),
@@ -228,21 +234,21 @@ function getVideoQualitySelect() {//清晰度切换
     };
     var vidHaveQualities = { //当?vidqs=1时返回
         quality: [{
-            name: 'BD 1080P60',
-            url: getVariable("urlofvid"),
-            type: 'hls',
-        },
-        {
-            name: 'SD',
-            url: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@YOSLMIZ/index121080p.m3u8',
-            type: 'hls',
-        },
+                name: 'BD 1080P60',
+                url: getVariable("urlofvid"),
+                type: 'hls',
+            },
+            {
+                name: 'SD',
+                url: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@YOSLMIZ/index121080p.m3u8',
+                type: 'hls',
+            },
         ],
-        defaultQuality: getQueryVariable("defaultQl") ? getQueryVariable("defaultQl"):0 ,
+        defaultQuality: getQueryVariable("defaultql") ? getQueryVariable("defaultql") : 0,//默认画质为第一个
         pic: getVariable("picurl"),
         thumbnails: getVariable("thumburl"),
     };
-    if (getTorFalse('vidqs')) {
+    if (getTorFalse('vidqs') && getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false) {
         return vidHaveQualities;
     } else {
         return vidDefault
@@ -639,8 +645,8 @@ var textHolder_zh_cn = {
     contextMenu0Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/img/pc/huawei-vision-x65.jpg',
     //contextMenu1Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/tablets/matepad-pro/img/pc/huawei-matepad-pro-kv-pc-1@2x.jpg',
     //contextMenu2Pic: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
-    defaultVidUrl: "https://cdn.jsdelivr.net/gh/MoChanBW/CDN@1.0.0/huawei-p40pro/index.m3u8",
-    defaultPicUrl: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@1.0.1/huawei-p40pro/index.jpg',
+    defaultVidUrl: "https://cdn.jsdelivr.net/gh/MoChanBW/CDN@latest/huawei-p40pro/index.m3u8",
+    defaultPicUrl: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@latest/huawei-p40pro/index.jpg',
     defaultSubUrl: 'assets/demoSubtitle_zh_cn.vtt',
 };
 var gTH = getTextHolder(); //缩写

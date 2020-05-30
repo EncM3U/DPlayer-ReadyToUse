@@ -15,7 +15,7 @@ const dp = new DPlayer({ //DPlayer主控制函数,详见 http://dplayer.js.org
     subtitle: {
         url: getVariable("suburl"), //字幕链接，vtt格式
         type: 'webvtt',
-        fontSize: '25px',
+        fontSize: /Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)?'13px':'25px',
         bottom: '10%',
         color: '#b7daff',
     },
@@ -34,11 +34,11 @@ const dp = new DPlayer({ //DPlayer主控制函数,详见 http://dplayer.js.org
 });
 
 //修复手机横屏问题  from https://dandoc.u2sb.top/danmu/install.html#dplayer-%E7%9A%84%E7%AE%80%E5%8D%95%E5%BA%94%E7%94%A8
-/*dp.on("fullscreen", function () {
+dp.on("fullscreen", function () {
     fullScreenNow = 1;
     if (
         /Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
     ) {
         screen.orientation.lock("landscape");
     }
-});*/
+});
