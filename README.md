@@ -97,4 +97,4 @@ Cooprate with [KLPY](https://github.com/KLPY-shuai/)
 
 [picurl]:https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/design/design-intro-e-plus.jpg
 [videourl]:https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm
-[Likethis]:https://dplayer.mochanbw.cn/demo/?vidurl=https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm&autoplay=1
+[Likethis]:https://dplayer.mochanbw.cn/?vidurl=https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm&autoplay=1

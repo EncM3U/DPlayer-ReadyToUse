@@ -11,12 +11,7 @@ const dp = new DPlayer({ //DPlayer主控制函数,详见 http://dplayer.js.org
     logo: getVariable("playerlogo"), //67% 不透明度左上角icon
     volume: 0.7,
     mutex: true,
-    video: {
-        url: getVariable("urlofvid"), //视频链接
-        pic: getVariable("picurl"),
-        thumbnails: getVariable("thumburl"),
-        type: getVariable("vidtype"), //视频类型(flv.normal.hls.dash)
-    },
+    video: getVideoQualitySelect(),
     subtitle: {
         url: getVariable("suburl"), //字幕链接，vtt格式
         type: 'webvtt',
@@ -25,7 +20,7 @@ const dp = new DPlayer({ //DPlayer主控制函数,详见 http://dplayer.js.org
         color: '#b7daff',
     },
     danmaku: getDanMaku(), //弹幕，在写了在写了（新建文件夹）
-    contextmenu: getContextMenu(), //默认contextMenu,自定义功能稍后添加
+    contextmenu: getContextMenu(), //默认contextMenu,自定义功能稍后(很久以后)添加
     //highlight: [
     //    {
     //        text: 'marker for 20s',
@@ -47,17 +42,3 @@ const dp = new DPlayer({ //DPlayer主控制函数,详见 http://dplayer.js.org
         screen.orientation.lock("landscape");
     }
 });*/
-
-/*
-dp.on("fullscreen_cancel", function () {
-    fullScreenNow = 0;
-});
-
-dp.on("loadstart", checkMobileLandscape());
-
-function checkMobileLandscape() {
-    if (fullScreenNow == 1 && /Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
-        screen.orientation.lock("landscape");
-    }
-}
-*/

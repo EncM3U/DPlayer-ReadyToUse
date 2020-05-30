@@ -49,12 +49,12 @@ function getVariable(variable) //返回变量字符串
             var defaultPlayerLogo = "assets/Cloud_Play_128px.png";
             return defaultPlayerLogo;
         } else if (variable == "suburl") {
-            if (variable == "suburl" && getDefault() ) //demo字幕相关,可用cdn加速
+            if (variable == "suburl" && getDefault()) //demo字幕相关,可用cdn加速
             {
                 var defaultSubUrl = gTH.defaultSubUrl; // Internationalization
                 return defaultSubUrl;
             } else {
-                let videourl = getVariable('vidurl') ? getVariable('vidurl') : getVariable('urlofvid') ;
+                let videourl = getVariable('vidurl') ? getVariable('vidurl') : getVariable('urlofvid');
                 let SubUrl = videourl.replace('.mp4', '.vtt');
                 videourl = null;
                 SubUrl = SubUrl.replace('.m3u8', '.vtt');
@@ -219,6 +219,35 @@ window.onblur = function () {
     document.title = '快回来~页面崩溃了';
 };
 */
+function getVideoQualitySelect() {//清晰度切换
+    var vidDefault = {//默认返回
+        url: getVariable("urlofvid"), //视频链接
+        pic: getVariable("picurl"),
+        thumbnails: getVariable("thumburl"),
+        type: getVariable("vidtype"), //视频类型(flv.normal.hls.dash)
+    };
+    var vidHaveQualities = { //当?vidqs=1时返回
+        quality: [{
+            name: 'BD 1080P60',
+            url: getVariable("urlofvid"),
+            type: 'hls',
+        },
+        {
+            name: 'SD',
+            url: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@YOSLMIZ/index121080p.m3u8',
+            type: 'hls',
+        },
+        ],
+        defaultQuality: getQueryVariable("defaultQl") ? getQueryVariable("defaultQl"):0 ,
+        pic: getVariable("picurl"),
+        thumbnails: getVariable("thumburl"),
+    };
+    if (getTorFalse('vidqs')) {
+        return vidHaveQualities;
+    } else {
+        return vidDefault
+    }
+}
 
 function base64Decoder(encodedString) { //可以用 https://tool.oschina.net/encrypt?type=3  加密
     let Base64 = { //from https://www.jianshu.com/p/82afa633033e
@@ -301,11 +330,11 @@ function getDanMaku() { //弹幕
             return false;
         }
     }
-    if (noDanMakuProvided()) { //如果url中未提供弹幕，返回默认弹幕
+    if (noDanMakuProvided()) { //DEMO使用的弹幕
         if (getVariable("urlofvid").includes("huawei-p40pro/index")) {
             var abid = "aid=882531009";
             var part = '&p=2';
-        } else if (getVariable("urlofvid").includes("YOSLMIZ/index")) {
+        } else if (getVariable("urlofvid").includes("YOSLMIZ/index11")) {
             var abid = "bvid=BV16s411U7co";
             var part = '';
         } else if (getVariable("urlofvid").includes("Nexus2019")) {
@@ -335,12 +364,12 @@ function getDanMaku() { //弹幕
             if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status == 200) {
                 var json = httpRequest.responseText;
                 json = JSON.parse(json);
-                DanMaku.token = json.VerificationCode;//方便以后搭弹幕服务器时用于校验身份
+                DanMaku.token = json.VerificationCode; //方便以后搭弹幕服务器时用于校验身份
                 DanMaku.user = "DPRTU" + json.VerificationCode.substring(0, 11);
             }
-            DanMaku.id = md5Encrypt(getVariable("urlofvid")).toUpperCase();//视频的唯一id
+            DanMaku.id = md5Encrypt(getVariable("urlofvid")).toUpperCase(); //视频的唯一id
         };
-        console.log(DanMaku);
+        //console.log(DanMaku);
         return DanMaku;
 
     } else {
