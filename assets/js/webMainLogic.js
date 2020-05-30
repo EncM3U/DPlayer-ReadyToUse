@@ -77,6 +77,9 @@ function getVariable(variable) //返回变量字符串
         } else if (variable == "preload") //preload相关
         {
             return "auto";
+        } else if (variable == "speed") //播放速度
+        {
+            return [0.5, 0.75, 1, 1.25, 1.5, 2];
         } else {
             return false;
         }
@@ -85,7 +88,7 @@ function getVariable(variable) //返回变量字符串
 
 function getDefault() //查看url中的vidurl和magurl是否定义，是，即非默认状态
 {
-    if (getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false) {
+    if (getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false && getTorFalse("vidqs")==false) {
         return true;
     } else {
         return false;
@@ -97,7 +100,7 @@ function getContextMenu() //返回右键的自定义功能目录（数组）
     var contextMenu = [];
     if (getDefault()) //如果url中的vidurl和magurl的参数为空，则返回默认menu
     {
-        contextMenu[0] = {
+        /*contextMenu[0] = {
             text: gTH.contextMenu0text,
             click: (player) => {
                 dp.notice(gTH.contextMenuSwitchText + gTH.contextMenu0text, 2000); //显示通知（string，time）时间单位毫秒
@@ -112,42 +115,8 @@ function getContextMenu() //返回右键的自定义功能目录（数组）
                     //user: 'DIYgod',
                 });
             },
-        };
-        contextMenu[1] = {
-            text: gTH.contextMenu1text,
-            click: (player) => {
-                dp.notice(gTH.contextMenuSwitchText + gTH.contextMenu1text, 2000); //显示通知（string，time）时间单位毫秒
-                dp.switchVideo({
-                    url: gTH.contextMenu1Url,
-                    pic: gTH.contextMenu1Pic,
-                    //thumbnails: 'example.jpg',
-                }, {
-                    //id: 'test',
-                    //api: 'https://api.prprpr.me/dplayer/',
-                    //maximum: 1000,
-                    //user: 'DPlayer-ReadyToUse',
-                });
-            },
-
-        };
-        contextMenu[2] = {
-            text: gTH.contextMenu2text,
-            click: (player) => {
-                dp.notice(gTH.contextMenuSwitchText + gTH.contextMenu2text, 2000); //显示通知（string，time）时间单位毫秒
-                dp.switchVideo({
-                    url: gTH.contextMenu2Url,
-                    pic: gTH.contextMenu2Pic,
-                    //thumbnails: 'example.jpg',
-                }, {
-                    //id: 'test',
-                    //api: 'https://api.prprpr.me/dplayer/',
-                    //maximum: 3000,
-                    //user: 'DIYgod',
-                });
-            },
-
-        };
-        contextMenu[3] = {
+        };*/
+        contextMenu[0] = {
             text: gTH.Manual,
             link: "https://github.com/MoChanBW/DPlayer-ReadyToUse/",
         };
@@ -155,7 +124,7 @@ function getContextMenu() //返回右键的自定义功能目录（数组）
         var length = contextMenu.length;
         var k = 0;
         while (k < length) {
-            if (contextMenu[k] != null && contextMenu[k].text == undefined) {
+            if (contextMenu[k].text == undefined) {
                 var count = k;
                 while (count < maxIndex) {
                     contextMenu[count] = contextMenu[count + 1]; //后面的传递上来
@@ -224,7 +193,6 @@ window.onblur = function () {
 };
 */
 function getVideoQualitySelect() { //清晰度切换
-    var videoQualitySelectTextHolder = getQueryVariable("vidqs");
 
     var vidDefault = { //默认返回
         url: getVariable("urlofvid"), //视频链接
@@ -232,23 +200,43 @@ function getVideoQualitySelect() { //清晰度切换
         thumbnails: getVariable("thumburl"),
         type: getVariable("vidtype"), //视频类型(flv.normal.hls.dash)
     };
-    var vidHaveQualities = { //当?vidqs=1时返回
-        quality: [{
-                name: 'BD 1080P60',
-                url: getVariable("urlofvid"),
-                type: 'hls',
-            },
-            {
-                name: 'SD',
-                url: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@YOSLMIZ/index121080p.m3u8',
-                type: 'hls',
-            },
-        ],
-        defaultQuality: getQueryVariable("defaultql") ? getQueryVariable("defaultql") : 0,//默认画质为第一个
-        pic: getVariable("picurl"),
-        thumbnails: getVariable("thumburl"),
-    };
+
     if (getTorFalse('vidqs') && getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false) {
+        var videoQualitySelectTextHolder = getQueryVariable("vidqs");
+        console.log(videoQualitySelectTextHolder);
+        var vsad = videoQualitySelectTextHolder.split(",");
+        /*for (var i = 0; i < vars.length; i++) {
+            var pair = vars[i].split("=");
+            if (pair[0] == variable) {
+                return pair[1];
+            }
+        }*/
+        var k = 0;
+        while (1) {
+            if (getQueryVariable("qsname" + k) && getQueryVariable("qsurl" + k) && getQueryVariable("qstype" + k)) {
+                k++;
+            } else {
+                break;
+            };
+        }
+
+        var arrayInQuality = [];
+        for (i = 0; i < k; i++) {
+
+            var jsonInQuality = {
+                name: getQueryVariable("qsname" + i),
+                url: getQueryVariable("qsurl" + i),
+                type: getQueryVariable("qstype" + i),
+            };
+            arrayInQuality[i] = jsonInQuality;
+
+        };
+        var vidHaveQualities = { //当?vidqs=1时返回  
+            quality: arrayInQuality,
+            defaultQuality: getQueryVariable("defaultql") ? getQueryVariable("defaultql") : 0, //默认画质为第一个
+            pic: getVariable("picurl"),
+            thumbnails: getVariable("thumburl"),
+        };
         return vidHaveQualities;
     } else {
         return vidDefault
@@ -601,48 +589,48 @@ function md5Encrypt(string) { //from https://mp.weixin.qq.com/s?src=11&timestamp
 
 var textHolder_en = {
     Manual: "Manual",
-    contextMenuSwitchText: "Switch to : ",
-    contextMenu0text: "HUAWEI Vision X65",
+    //contextMenuSwitchText: "Switch to : ",
+    //contextMenu0text: "HUAWEI Vision X65",
     //contextMenu1text: "HUAWEI MatePad Pro",
     //contextMenu2text: "HUAWEI P40 Pro+",
-    contextMenu0Url: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/media/tvc.mp4',
+    //contextMenu0Url: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/media/tvc.mp4',
     //contextMenu1Url: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/tablets/matepad-pro/img/video/huawei-matepad-pro-all-video.mp4',
     //contextMenu2Url: "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm",
-    contextMenu0Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/img/pc/huawei-vision-x65.jpg',
+    //contextMenu0Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/img/pc/huawei-vision-x65.jpg',
     //contextMenu1Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/tablets/matepad-pro/img/pc/huawei-matepad-pro-kv-pc-1@2x.jpg',
     //contextMenu2Pic: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
-    defaultVidUrl: "https://cdn.jsdelivr.net/gh/MoChanBW/CDN@1.0.0/huawei-p40pro/index.m3u8",
-    defaultPicUrl: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@1.0.1/huawei-p40pro/index.jpg',
+    defaultVidUrl: "https://cdn.jsdelivr.net/gh/MoChanBW/CDN@latest/huawei-p40pro/index.m3u8",
+    defaultPicUrl: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@latest/huawei-p40pro/index.jpg',
     defaultSubUrl: 'assets/demoSubtitle_en.vtt',
 };
 
 var textHolder_zh_tw = {
     Manual: "使用說明",
-    contextMenuSwitchText: "切換到 : ",
-    contextMenu0text: "華為智慧屏 X65",
+    //contextMenuSwitchText: "切換到 : ",
+    //contextMenu0text: "華為智慧屏 X65",
     //contextMenu1text: "華為 MatePad Pro",
     //contextMenu2text: "華為 P40 Pro+",
-    contextMenu0Url: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/media/tvc.mp4',
+    //contextMenu0Url: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/media/tvc.mp4',
     //contextMenu1Url: "https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/tablets/matepad-pro/img/video/huawei-matepad-pro-all-video.mp4",
     //contextMenu2Url: "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm",
-    contextMenu0Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/img/pc/huawei-vision-x65.jpg',
+    //contextMenu0Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/img/pc/huawei-vision-x65.jpg',
     //contextMenu1Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/tablets/matepad-pro/img/pc/huawei-matepad-pro-kv-pc-1@2x.jpg',
     //contextMenu2Pic: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
-    defaultVidUrl: "https://cdn.jsdelivr.net/gh/MoChanBW/CDN@1.0.0/huawei-p40pro/index.m3u8",
-    defaultPicUrl: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@1.0.1/huawei-p40pro/index.jpg',
+    defaultVidUrl: "https://cdn.jsdelivr.net/gh/MoChanBW/CDN@latest/huawei-p40pro/index.m3u8",
+    defaultPicUrl: 'https://cdn.jsdelivr.net/gh/MoChanBW/CDN@latest/huawei-p40pro/index.jpg',
     defaultSubUrl: 'assets/demoSubtitle_zh_tw.vtt',
 };
 
 var textHolder_zh_cn = {
     Manual: "使用说明",
-    contextMenuSwitchText: "切换到 : ",
-    contextMenu0text: "华为智慧屏 X65",
+    //contextMenuSwitchText: "切换到 : ",
+    //contextMenu0text: "华为智慧屏 X65",
     //contextMenu1text: "华为 MatePad Pro",
     //contextMenu2text: "华为 P40 Pro+",
-    contextMenu0Url: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/media/tvc.mp4',
+    //contextMenu0Url: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/media/tvc.mp4',
     //contextMenu1Url: "https://consumer-img.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/tablets/matepad-pro/img/video/huawei-matepad-pro-all-video.mp4",
     //contextMenu2Url: "https://consumer.huawei.com/content/dam/huawei-cbg-site/common/mkt/pdp/phones/p40-pro-plus/images/intro/tvc/video-e-plus.webm",
-    contextMenu0Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/img/pc/huawei-vision-x65.jpg',
+    //contextMenu0Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/visions/plato/img/pc/huawei-vision-x65.jpg',
     //contextMenu1Pic: 'https://consumer-img.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/tablets/matepad-pro/img/pc/huawei-matepad-pro-kv-pc-1@2x.jpg',
     //contextMenu2Pic: 'https://consumer.huawei.com/content/dam/huawei-cbg-site/greate-china/cn/mkt/pdp/phones/p40-pro/images/design/design-intro-e-cn@2x.webp',
     defaultVidUrl: "https://cdn.jsdelivr.net/gh/MoChanBW/CDN@latest/huawei-p40pro/index.m3u8",

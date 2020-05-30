@@ -10,6 +10,8 @@ const dp = new DPlayer({ //DPlayer主控制函数,详见 http://dplayer.js.org
     preload: getVariable("preload"),
     logo: getVariable("playerlogo"), //67% 不透明度左上角icon
     volume: 0.7,
+    airplay: getTrueorF("airplay"),
+    playbackSpeed:getVariable("speed"),
     mutex: true,
     video: getVideoQualitySelect(),
     subtitle: {
@@ -35,7 +37,6 @@ const dp = new DPlayer({ //DPlayer主控制函数,详见 http://dplayer.js.org
 
 //修复手机横屏问题  from https://dandoc.u2sb.top/danmu/install.html#dplayer-%E7%9A%84%E7%AE%80%E5%8D%95%E5%BA%94%E7%94%A8
 dp.on("fullscreen", function () {
-    fullScreenNow = 1;
     if (
         /Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)
     ) {
