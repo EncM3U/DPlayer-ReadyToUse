@@ -166,7 +166,7 @@ function getTorFalse(key) { //根据url中的1或0返回布伦值,默认false
     document.title = webTitle;
 })();
 
-(function urlChangeFavicon() { //用js更改favicon（立即执行）
+/*(function urlChangeFavicon() { //用js更改favicon（立即执行）
     document.head = document.head || document.getElementsByTagName('head')[0];
     var link = document.createElement('link'),
         oldLink = document.getElementById('dynamic-favicon');
@@ -178,6 +178,7 @@ function getTorFalse(key) { //根据url中的1或0返回布伦值,默认false
         document.head.appendChild(link);
     }
 })(); //暂无法实现此功能
+*/
 
 /*
 window.onfocus = function () { //标签页焦点更改
@@ -202,15 +203,6 @@ function getVideoQualitySelect() { //清晰度切换
     };
 
     if (getTorFalse('vidqs') && getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false) {
-        var videoQualitySelectTextHolder = getQueryVariable("vidqs");
-        console.log(videoQualitySelectTextHolder);
-        var vsad = videoQualitySelectTextHolder.split(",");
-        /*for (var i = 0; i < vars.length; i++) {
-            var pair = vars[i].split("=");
-            if (pair[0] == variable) {
-                return pair[1];
-            }
-        }*/
         var k = 0;
         while (1) {
             if (getQueryVariable("qsname" + k) && getQueryVariable("qsurl" + k) && getQueryVariable("qstype" + k)) {
