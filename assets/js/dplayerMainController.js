@@ -15,7 +15,7 @@ const dp = new DPlayer({ //DPlayer主控制函数,详见 http://dplayer.js.org
     subtitle: {
         url: getVariable("suburl"), //字幕链接，vtt格式
         type: 'webvtt',
-        fontSize: /Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)?'15px':'25px',
+        fontSize: /Android|webOS|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)?'20px':'25px',
         bottom: '5%',
         color: '#b7daff',
     },
