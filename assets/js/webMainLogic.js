@@ -38,6 +38,9 @@ function getVariable(variable) //返回变量字符串
             } else if (getQueryVariable("vidurl")) //vidurl的值存在时返回的链接
             {
                 return getQueryVariable("vidurl");
+            } else if (getQueryVariable("qsurl" + getVariable("defaultql"))) //video switch default vid
+            {
+                return getQueryVariable("qsurl" + getVariable("defaultql"));
             } else //vidurl和magurl的值未指定时返回的链接（默认播放）
             {
                 var defaultVidUrl = gTH.defaultVidUrl;
@@ -58,19 +61,31 @@ function getVariable(variable) //返回变量字符串
                 var defaultSubUrl = gTH.defaultSubUrl; // Internationalization
                 return defaultSubUrl;
             } else {
-                let videourl = getVariable('vidurl') ? getVariable('vidurl') : getVariable('urlofvid');
-                let SubUrl = videourl.replace('.mp4', '.vtt');
-                videourl = null;
-                SubUrl = SubUrl.replace('.m3u8', '.vtt');
-                SubUrl = SubUrl.replace('.mpd', '.vtt');
-                SubUrl = SubUrl.replace('.flv', '.vtt');
-                SubUrl = SubUrl.replace('.webm', '.vtt');
-                return SubUrl; //默认字幕
+                let videourl = getVariable('magurl') ? false : getVariable('urlofvid');
+                if (videourl) {
+                    let SubUrl = videourl.replace('.mp4', '.vtt');
+                    SubUrl = SubUrl.replace('.m3u8', '.vtt');
+                    SubUrl = SubUrl.replace('.mpd', '.vtt');
+                    SubUrl = SubUrl.replace('.flv', '.vtt');
+                    SubUrl = SubUrl.replace('.webm', '.vtt');
+                    return SubUrl; //默认字幕
+                } else {
+                    return "";
+                }
+
             }
         } else if (variable == "webtitle") //页面title相关
         {
             var defaultWebTitle = 'DPlayer-ReadyToUse';
             return defaultWebTitle;
+        } else if (variable == "danmakuapi") //弹幕api
+        {
+            var defaultDanmakuapi = 'https://danmu.u2sb.top/api/danmu/dplayer/';
+            return defaultDanmakuapi;
+        } else if (variable == "danmakuaddition") //外加弹幕使用的服务器
+        {
+            var defaultDanmakuaddition = 'https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?';
+            return defaultDanmakuaddition;
         } else if (variable == "favicon") //favicon用下面的函数指定
         {
             return "assets/Cloud_Play.svg";
@@ -88,7 +103,7 @@ function getVariable(variable) //返回变量字符串
 
 function getDefault() //查看url中的vidurl和magurl是否定义，是，即非默认状态
 {
-    if (getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false && getTorFalse("vidqs")==false) {
+    if (getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false && getTorFalse("vidqs") == false) {
         return true;
     } else {
         return false;
@@ -320,27 +335,20 @@ function getDanMaku() { //弹幕
         if (getVariable("urlofvid").includes("huawei-p40pro/index")) {
             var abid = "aid=882531009";
             var part = '&p=2';
-        } else if (getVariable("urlofvid").includes("YOSLMIZ/index11")) {
-            var abid = "bvid=BV16s411U7co";
-            var part = '';
-        } else if (getVariable("urlofvid").includes("Nexus2019")) {
-            var abid = "bvid=BV1rz411z7uM";
-            var part = '';
-        }
-    } else {
+        }  else {
         var abid = getQueryVariable("aid") ? 'aid=' + getQueryVariable("aid") : '';
         var abid = getQueryVariable("bvid") ? 'bvid=' + getQueryVariable("bvid") : abid;
         var part = getQueryVariable("part") ? '&p=' + getQueryVariable("part") : '';
     }
     var DanMaku = {
         id: '',
-        api: 'https://danmu.u2sb.top/api/danmu/dplayer/',
+        api: getVariable("danmakuapi"),
         token: '',
         maximum: 1000,
-        addition: ['https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?' + abid + part],
+        addition: [getVariable("danmakuaddition") + abid + part],
         user: 'DPlayer-ReadyToUse',
         bottom: '15%',
-        unlimited: true,
+        unlimited: getTorFalse("unlimited"),
     };
     if (DanmakuON()) {
         var httpRequest = new XMLHttpRequest();

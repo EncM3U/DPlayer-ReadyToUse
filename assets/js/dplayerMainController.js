@@ -22,7 +22,7 @@ const dp = new DPlayer({ //DPlayer主控制函数,详见 http://dplayer.js.org
         color: '#b7daff',
     },
     danmaku: getDanMaku(), //弹幕，在写了在写了（新建文件夹）
-    contextmenu: getContextMenu(), //默认contextMenu,自定义功能稍后(很久以后)添加
+    contextmenu: getContextMenu(), //自定义功能稍后(很久以后)添加
     //highlight: [
     //    {
     //        text: 'marker for 20s',
