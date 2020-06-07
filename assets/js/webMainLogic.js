@@ -345,7 +345,7 @@ function getDanMaku() { //弹幕
             addition: [getVariable("danmakuaddition") + abid + part],
             user: 'DPlayer-ReadyToUse',
             bottom: '15%',
-            unlimited: getTorFalse("unlimited"),
+            unlimited: getTrueorF("unlimited"),
         };
         if (DanmakuON()) {
             var httpRequest = new XMLHttpRequest();
@@ -359,14 +359,13 @@ function getDanMaku() { //弹幕
                     DanMaku.user = "DPRTU" + json.VerificationCode.substring(0, 11);
                 }
                 DanMaku.id = md5Encrypt(getVariable("urlofvid")).toUpperCase(); //视频的唯一id
-                if(DanMaku.id==''){
-                    console.log("Danmaku id undefined")
-                }
-               
-            };
-           
-            return DanMaku;
 
+
+            };
+            if (DanMaku.id == '' || DanMaku.token == '') {
+                console.warn("Danmaku id/token is undefined.");
+                return DanMaku;
+            }
         } else {
             return null;
         }
