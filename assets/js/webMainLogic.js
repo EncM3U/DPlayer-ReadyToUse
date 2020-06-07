@@ -10,9 +10,6 @@ function getQueryVariable(variable) { //获取参数(function from https://www.r
     return (false);
 }
 
-function spiltQualites(pair) {
-
-}
 
 function getVariable(variable) //返回变量字符串
 {
@@ -357,11 +354,15 @@ function getDanMaku() { //弹幕
             httpRequest.onreadystatechange = function () {
                 if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status == 200) {
                     var json = httpRequest.responseText;
-                    json = JSON.parse(json);
+                    json = JSON.parse(json);//将文本转化为json对象
                     DanMaku.token = json.VerificationCode; //方便以后搭弹幕服务器时用于校验身份
                     DanMaku.user = "DPRTU" + json.VerificationCode.substring(0, 11);
                 }
                 DanMaku.id = md5Encrypt(getVariable("urlofvid")).toUpperCase(); //视频的唯一id
+                if(DanMaku.id==''){
+                    console.log("Danmaku id undefined")
+                }
+                //console.log(getVariable("urlofvid"));
             };
             //console.log(DanMaku);
             return DanMaku;
