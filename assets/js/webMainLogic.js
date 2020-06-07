@@ -317,7 +317,7 @@ function noDanMakuProvided() {
 
 
 function getDanMaku() { //弹幕  
-    function DanmakuON() {
+    function DanmakuON() {//是否启用弹幕
         if (getDefault() || getQueryVariable("bvid") || getQueryVariable("aid")) {
             if (getTrueorF("danmaku")) {
                 return true;
@@ -349,7 +349,7 @@ function getDanMaku() { //弹幕
         };
         if (DanmakuON()) {
             var httpRequest = new XMLHttpRequest();
-            httpRequest.open('GET', 'https://dpdanmakuapi.bryanw.workers.dev', true);
+            httpRequest.open('GET', 'https://api.mochanbw.cn/dpverification/', true);
             httpRequest.send();
             httpRequest.onreadystatechange = function () {
                 if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status == 200) {
@@ -362,9 +362,9 @@ function getDanMaku() { //弹幕
                 if(DanMaku.id==''){
                     console.log("Danmaku id undefined")
                 }
-                //console.log(getVariable("urlofvid"));
+               
             };
-            //console.log(DanMaku);
+           
             return DanMaku;
 
         } else {
