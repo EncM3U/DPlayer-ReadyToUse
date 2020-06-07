@@ -317,7 +317,7 @@ function noDanMakuProvided() {
 
 
 function getDanMaku() { //弹幕  
-    function DanmakuON() {//是否启用弹幕
+    function DanmakuON() { //是否启用弹幕
         if (getDefault() || getQueryVariable("bvid") || getQueryVariable("aid")) {
             if (getTrueorF("danmaku")) {
                 return true;
@@ -354,7 +354,7 @@ function getDanMaku() { //弹幕
             httpRequest.onreadystatechange = function () {
                 if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status == 200) {
                     var json = httpRequest.responseText;
-                    json = JSON.parse(json);//将文本转化为json对象
+                    json = JSON.parse(json); //将文本转化为json对象
                     DanMaku.token = json.VerificationCode; //方便以后搭弹幕服务器时用于校验身份
                     DanMaku.user = "DPRTU" + json.VerificationCode.substring(0, 11);
                 }
@@ -371,6 +371,7 @@ function getDanMaku() { //弹幕
         }
     }
 }
+
 function md5Encrypt(string) { //from https://mp.weixin.qq.com/s?src=11&timestamp=1588897977&ver=2325&signature=GBu3lAb0gmCyBQaLMSmGLqr3iV4c3-swAuHCMeVeDwl8NGbZZ8vo3J7KOV6rRpWPP7Pe6PIFWy7rabKf5ciHAyaRns36jfgKR9SxsUX9aAvC7Jr-19Fn1RF0xVJDjxDD&new=1
     function md5_RotateLeft(lValue, iShiftBits) {
         return (lValue << iShiftBits) | (lValue >>> (32 - iShiftBits));
