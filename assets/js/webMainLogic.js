@@ -217,7 +217,7 @@ function getVideoQualitySelect() { //清晰度切换
     if (getTorFalse('vidqs') && getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false) {
         var k = 0;
         while (1) {
-            if (getQueryVariable("qsname" + k) && getQueryVariable("qsurl" + k) && getQueryVariable("qstype" + k)) {
+            if (getQueryVariable("qsname" + k) && getQueryVariable("qsurl" + k)) {
                 k++;
             } else {
                 break;
@@ -230,7 +230,7 @@ function getVideoQualitySelect() { //清晰度切换
             var jsonInQuality = {
                 name: getQueryVariable("qsname" + i),
                 url: getQueryVariable("qsurl" + i),
-                type: getQueryVariable("qstype" + i),
+                type: getQueryVariable("qstype" + i) ? getQueryVariable("qstype" + i) : "auto",
             };
             arrayInQuality[i] = jsonInQuality;
 
