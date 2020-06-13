@@ -75,14 +75,14 @@ function getVariable(variable) //返回变量字符串
         {
             var defaultWebTitle = 'DPlayer-ReadyToUse';
             return defaultWebTitle;
-        } else if (variable == "danmakuapi") //弹幕api
-        {
-            var defaultDanmakuapi = 'https://danmu.u2sb.top/api/danmu/dplayer/';
-            return defaultDanmakuapi;
         } else if (variable == "danmakuaddition") //外加弹幕使用的服务器
         {
             var defaultDanmakuaddition = 'https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?';
             return defaultDanmakuaddition;
+        } else if (variable == "danmakuapi") //默认弹幕api
+        {
+            var defaultDanmakuapi = 'https://danmu.u2sb.top/api/danmu/dplayer/';
+            return defaultDanmakuapi;
         } else if (variable == "favicon") //favicon用下面的函数指定
         {
             return "assets/Cloud_Play.svg";
@@ -206,14 +206,12 @@ window.onblur = function () {
 };
 */
 function getVideoQualitySelect() { //清晰度切换
-
     var vidDefault = { //默认返回
         url: getVariable("urlofvid"), //视频链接
         pic: getVariable("picurl"),
         thumbnails: getVariable("thumburl"),
-        type: getVariable("vidtype"), //视频类型(flv.normal.hls.dash)
+        type: getQueryVariable("vidtype") ? getQueryVariable("vidtype") : "auto", //视频类型(flv.normal.hls.dash)
     };
-
     if (getTorFalse('vidqs') && getQueryVariable("vidurl") == false && getQueryVariable("magurl") == false) {
         var k = 0;
         while (1) {
@@ -223,20 +221,17 @@ function getVideoQualitySelect() { //清晰度切换
                 break;
             };
         }
-
-        var arrayInQuality = [];
+        var qualityInArray = [];
         for (i = 0; i < k; i++) {
-
             var jsonInQuality = {
                 name: getQueryVariable("qsname" + i),
                 url: getQueryVariable("qsurl" + i),
                 type: getQueryVariable("qstype" + i) ? getQueryVariable("qstype" + i) : "auto",
             };
-            arrayInQuality[i] = jsonInQuality;
-
+            qualityInArray[i] = jsonInQuality;
         };
         var vidHaveQualities = { //当?vidqs=1时返回  
-            quality: arrayInQuality,
+            quality: qualityInArray,
             defaultQuality: getQueryVariable("defaultql") ? getQueryVariable("defaultql") : 0, //默认画质为第一个
             pic: getVariable("picurl"),
             thumbnails: getVariable("thumburl"),
@@ -306,29 +301,9 @@ function getTextHolder() {
     }
 }
 
-function noDanMakuProvided() {
-    if (getQueryVariable("bvid") || getQueryVariable("aid")) {
-        return false;
-    } else {
-        return true;
-    }
-}
-
-
 
 function getDanMaku() { //弹幕  
-    function DanmakuON() { //是否启用弹幕
-        if (getDefault() || getQueryVariable("bvid") || getQueryVariable("aid")) {
-            if (getTrueorF("danmaku")) {
-                return true;
-            } else {
-                return false;
-            }
-        } else {
-            return false;
-        }
-    }
-    if (noDanMakuProvided()) { //DEMO使用的弹幕
+    if (getTorFalse("danmaku") || getDefault()) {
         if (getVariable("urlofvid").includes("huawei-p40pro/index")) {
             var abid = "aid=882531009";
             var part = '&p=2';
@@ -338,37 +313,37 @@ function getDanMaku() { //弹幕
             var part = getQueryVariable("part") ? '&p=' + getQueryVariable("part") : '';
         }
         var DanMaku = {
-            id: '',
+            id: getVariable("danmakuid"),
             api: getVariable("danmakuapi"),
-            token: '',
+            token: getVariable("danmakutoken"),
             maximum: 1000,
             addition: [getVariable("danmakuaddition") + abid + part],
-            user: 'DPlayer-ReadyToUse',
+            user: getVariable("danmakuuser"),
             bottom: '15%',
             unlimited: getTrueorF("unlimited"),
         };
-        if (DanmakuON()) {
+
+        if (getDefault() || (getTorFalse("danmaku") && (DanMaku.api == false || getQueryVariable("danmakuaddition") == false))) { //（这里之后要改）弹幕启动且api或addition不存在，或默认状态
             var httpRequest = new XMLHttpRequest();
-            httpRequest.open('GET', 'https://api.mochanbw.cn/dpverification/', true);
+            httpRequest.open('GET', 'https://api.mochanbw.cn/dpverification/?vidurl=' + base64Encoder(getVariable("urlofvid")) + '&cookies=' + 'undefined', true);
             httpRequest.send();
             httpRequest.onreadystatechange = function () {
                 if (httpRequest.readyState == XMLHttpRequest.DONE && httpRequest.status == 200) {
                     var json = httpRequest.responseText;
                     json = JSON.parse(json); //将文本转化为json对象
                     DanMaku.token = json.VerificationCode; //方便以后搭弹幕服务器时用于校验身份
-                    DanMaku.user = "DPRTU" + json.VerificationCode.substring(0, 11);
+                    DanMaku.user = "DPRTU" + json.VerificationCode.substring(0, 10);
                 }
-                DanMaku.id = md5Encrypt(getVariable("urlofvid")).toUpperCase(); //视频的唯一id
-
-
-            };
-            if (DanMaku.id == '' || DanMaku.token == '') {
-                console.warn("Danmaku id/token is undefined.");
-                return DanMaku;
             }
+            DanMaku.id = md5Encrypt(getVariable("urlofvid")).toUpperCase(); //视频的唯一id
+            return DanMaku; //这个return放这，我也不知道为什么
         } else {
-            return null;
+            return DanMaku;
         }
+
+    } else {
+        console.warn("Danmaku OFF");
+        return {};
     }
 }
 
