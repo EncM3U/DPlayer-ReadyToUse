@@ -173,7 +173,7 @@ function getTorFalse(key) { //根据url中的1或0返回布伦值,默认false
     }
 }
 
-(function writeWebTitle() { //获取url中webtitle的参数并写入<title>（立即执行）
+(function writeWebTitle() { //取消此功能
     var webTitle = getVariable("webtitle");
     document.title = webTitle;
 })();
