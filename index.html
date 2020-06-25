@@ -37,6 +37,40 @@
         <div id="dplayer"></div>
     </div>
     <script defer src="assets/js/webMainLogic.js"></script>
+<!--     <script type="application/javascript">
+        function createApiBackend(url, onMessage) {
+            var ws;
+            var connect = function () {
+                ws = new WebSocket(url);
+                ws.onmessage = function (event) {
+                    onMessage(JSON.parse(event.data));
+                };
+                ws.onclose = function () {
+                    // Try to reconnect in 5 seconds
+                    setTimeout(connect, 5000);
+                };
+            };
+            var connected = false;
+            window.addEventListener('beforeunload', function () {
+                ws.onclose = null;
+                ws.close();
+            });
+            return {
+                read: function (options) {
+                    if (connected) {
+                        return;
+                    }
+                    connected = true;
+                    connect();
+                    options.success();
+                },
+                send: function (options) {
+                    ws.send(JSON.stringify(options.data));
+                    options.success();
+                }
+            };
+        }
+    </script> -->
     <script defer src="assets/js/dplayerMainController.js"></script>
 </body>
 

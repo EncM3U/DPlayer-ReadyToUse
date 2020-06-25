@@ -1,4 +1,4 @@
-const dp = new DPlayer({ //DPlayer主控制函数,详见 http://dplayer.js.org
+var dp = new DPlayer({ //DPlayer主控制函数,详见 http://dplayer.js.org
     container: document.getElementById('dplayer'),
     screenshot: getTrueorF("screenshot"),
     live: getTorFalse("live"), //是否开启直播模式
@@ -21,7 +21,7 @@ const dp = new DPlayer({ //DPlayer主控制函数,详见 http://dplayer.js.org
         bottom: '5%',
         color: '#b7daff',
     },
-    danmaku: getDanMaku(), //弹幕，在写了在写了（新建文件夹）
+    danmaku: getDanMaku(), 
     contextmenu: getContextMenu(), //自定义功能稍后(很久以后)添加
     //highlight: [
     //    {

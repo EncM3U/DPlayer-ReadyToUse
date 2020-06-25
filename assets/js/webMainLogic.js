@@ -77,11 +77,11 @@ function getVariable(variable) //返回变量字符串
             return defaultWebTitle;
         } else if (variable == "danmakuaddition") //外加弹幕使用的服务器
         {
-            var defaultDanmakuaddition = 'https://danmu.u2sb.top/api/danmu/dplayer/v3/bilibili/?';
+            var defaultDanmakuaddition = 'https://api.mochanbw.cn/bilibili/?';
             return defaultDanmakuaddition;
         } else if (variable == "danmakuapi") //默认弹幕api
         {
-            var defaultDanmakuapi = 'https://danmu.u2sb.top/api/danmu/dplayer/';
+            var defaultDanmakuapi = 'https://api.mochanbw.cn/dpdanmakuapi/';
             return defaultDanmakuapi;
         } else if (variable == "favicon") //favicon用下面的函数指定
         {
