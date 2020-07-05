@@ -17,6 +17,7 @@
 - [Usage](#usage)
   - [Magnet Link](#magnet-link)
   - [Danmaku Settings](#danmaku-settings)
+  - [Video Quality Switch](#video-quality-switch)
 - [Author](#author)
 
 ## Introduction
@@ -81,12 +82,12 @@ Link Format e.g.`https://yourdomain/?magurl={base64EncodedMagnetLinkHere}`
 |     Name     | Default |              Description               |
 |:------------:|:-------:|:--------------------------------------:|
 |     aid      |   ''    | (addition danmaku) bilibili video aid  |
-|     part     |   ''    | (addition danmaku) bilibili video part |
-|   danmaku    |  false  |              values: 0,1               |
-|  danmakuid   |    -    |    The only id represents the Video    |
-|  danmakuapi  |    -    |        api for sending danmaku         |
 |     bvid     |   ''    |    (addition danmaku) bilibili bvid    |
+|   danmaku    |  false  |              values: 0,1               |
+|  danmakuapi  |    -    |        api for sending danmaku         |
+|  danmakuid   |    -    |    The only id represents the Video    |
 | danmakutoken |    -    |       token for sending danmaku        |
+|     part     |   ''    | (addition danmaku) bilibili video part |
 
 > You should build a backend to receive danmaku requests by yourself.
 >
@@ -98,10 +99,10 @@ Link Format e.g.`https://yourdomain/?magurl={base64EncodedMagnetLinkHere}`
 
 |      Name      | Default |                     Description                      |
 |:--------------:|:-------:|:----------------------------------------------------:|
-|     vidqs      |  false  |       Quality Switch Mode ON/OFF,values: 1 , 0       |
 | qsname{number} |    -    |   THe name displayed in the chart (must be given)    |
-| qsurl{number}  |    -    |        Video URL of a quality (must be given)        |
 | qstype{number} | "auto"  | values: auto , hls , flv , dash , normal ,webtorrent |
+| qsurl{number}  |    -    |        Video URL of a quality (must be given)        |
+|     vidqs      |  false  |       Quality Switch Mode ON/OFF,values: 1 , 0       |
 
 
 
