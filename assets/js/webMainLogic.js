@@ -290,16 +290,7 @@ function getLang() { //获得语言,若未指定则返回浏览器语言
     }
 }
 
-//国际化
-function getTextHolder() {
-    if (getLang() == "zh-cn") {
-        return textHolder_zh_cn;
-    } else if (getLang() == "zh-tw") {
-        return textHolder_zh_tw;
-    } else {
-        return textHolder_en;
-    }
-}
+
 
 
 function getDanMaku() { //弹幕  
@@ -561,6 +552,17 @@ function md5Encrypt(string) { //from https://mp.weixin.qq.com/s?src=11&timestamp
         d = md5_AddUnsigned(d, DD);
     }
     return (md5_WordToHex(a) + md5_WordToHex(b) + md5_WordToHex(c) + md5_WordToHex(d)).toLowerCase();
+}
+
+//国际化
+function getTextHolder() {
+    if (getLang() == "zh-cn") {
+        return textHolder_zh_cn;
+    } else if (getLang() == "zh-tw") {
+        return textHolder_zh_tw;
+    } else {
+        return textHolder_en;
+    }
 }
 
 var textHolder_en = {
