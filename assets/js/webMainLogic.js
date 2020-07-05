@@ -75,13 +75,13 @@ function getVariable(variable) //返回变量字符串
         {
             var defaultWebTitle = 'DPlayer-ReadyToUse';
             return defaultWebTitle;
-        } else if (variable == "danmakuaddition") //外加弹幕使用的服务器
+        } else if (variable == "danmakuaddition") //外加bilibili弹幕使用的服务器
         {
-            var defaultDanmakuaddition = 'https://api.mochanbw.cn/bilibili/?';
+            var defaultDanmakuaddition = 'https://api.mochanbw.cn/dplayer/v3/bilibili/?';
             return defaultDanmakuaddition;
         } else if (variable == "danmakuapi") //默认弹幕api
         {
-            var defaultDanmakuapi = 'https://api.mochanbw.cn/dpdanmakuapi/';
+            var defaultDanmakuapi = 'https://api.mochanbw.cn/dplayer/';
             return defaultDanmakuapi;
         } else if (variable == "favicon") //favicon用下面的函数指定
         {
