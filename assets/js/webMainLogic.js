@@ -60,7 +60,7 @@ function getVariable(variable) //返回变量字符串
             } else {
                 let videourl = getVariable('magurl') ? false : getVariable('urlofvid');
                 if (videourl) {
-                    if (videourl.endsWith(".mp3") == false) {
+                    if ((videourl.endsWith(".mp3") ||videourl.endsWith(".aac"))== false) {
                         let SubUrl = videourl.replace('.mp4', '.vtt');
                         SubUrl = SubUrl.replace('.m3u8', '.vtt');
                         SubUrl = SubUrl.replace('.mpd', '.vtt');
@@ -68,10 +68,12 @@ function getVariable(variable) //返回变量字符串
                         SubUrl = SubUrl.replace('.webm', '.vtt');
                         return SubUrl; //默认字幕
                     } else { 
-                        return "";
+                        console.warn("Subtitle OFF(Music)")
+                        return false;
                     }
                 } else {
-                    return "";
+                    console.warn("Subtitle OFF(Webtorrent)")
+                    return false;
                 }
 
             }
