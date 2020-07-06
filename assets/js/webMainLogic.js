@@ -60,12 +60,16 @@ function getVariable(variable) //返回变量字符串
             } else {
                 let videourl = getVariable('magurl') ? false : getVariable('urlofvid');
                 if (videourl) {
-                    let SubUrl = videourl.replace('.mp4', '.vtt');
-                    SubUrl = SubUrl.replace('.m3u8', '.vtt');
-                    SubUrl = SubUrl.replace('.mpd', '.vtt');
-                    SubUrl = SubUrl.replace('.flv', '.vtt');
-                    SubUrl = SubUrl.replace('.webm', '.vtt');
-                    return SubUrl; //默认字幕
+                    if (videourl.endsWith(".mp3") == false) {
+                        let SubUrl = videourl.replace('.mp4', '.vtt');
+                        SubUrl = SubUrl.replace('.m3u8', '.vtt');
+                        SubUrl = SubUrl.replace('.mpd', '.vtt');
+                        SubUrl = SubUrl.replace('.flv', '.vtt');
+                        SubUrl = SubUrl.replace('.webm', '.vtt');
+                        return SubUrl; //默认字幕
+                    } else { 
+                        return "";
+                    }
                 } else {
                     return "";
                 }
