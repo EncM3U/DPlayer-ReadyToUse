@@ -334,7 +334,7 @@ function getDanMaku() { //弹幕
 
     } else {
         console.warn("Danmaku OFF");
-        return null;
+        return false;
     }
 }
 
